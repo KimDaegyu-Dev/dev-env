@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "dtoplak.vscode-glsllint",
+    "llvm-vs-code-extensions.vscode-clangd",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.makefile-tools",
+    "ngtystr.ppm-pgm-viewer-for-vscode",
+    "ohziinteractivestudio.ohzi-vscode-glb-viewer",
+    "rust-lang.rust-analyzer",
+    "shader-slang.slang-language-extension",
+    "slevesque.shader",
+    "tamasfe.even-better-toml",
+    "twxs.cmake",
+    "vadimcn.vscode-lldb"
+  ],
+  "reviewNeeded": [
+    "ms-vscode.cpptools",
+    "ms-vscode.hexeditor"
+  ]
+}

@@ -1,7 +1,43 @@
-docker compose up
-docker compose down
-docker compose logs
-db migrate
-db seed
-run server
-run tests
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "backend: docker compose up",
+      "type": "shell",
+      "command": "docker compose up",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: docker compose logs",
+      "type": "shell",
+      "command": "docker compose logs --tail=200",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: docker compose ps",
+      "type": "shell",
+      "command": "docker compose ps",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: test",
+      "type": "shell",
+      "command": "npm test",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: migrate example",
+      "type": "shell",
+      "command": "npm run migrate",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: docker compose down manual",
+      "type": "shell",
+      "command": "echo 'Run manually after confirming: docker compose down'",
+      "problemMatcher": []
+    }
+  ]
+}

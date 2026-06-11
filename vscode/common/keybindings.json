@@ -1,11 +1,3 @@
-빌드
-테스트
-포맷
-터미널 열기
-문제 패널 열기
-Git 변경사항 보기
-현재 파일 실행
-Task 실행
 [
   {
     "key": "ctrl+shift+b",
@@ -17,10 +9,31 @@ Task 실행
   },
   {
     "key": "ctrl+alt+f",
-    "command": "editor.action.formatDocument"
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus && !editorReadonly"
   },
   {
     "key": "ctrl+`",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "workbench.actions.view.problems"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.action.tasks.runTask"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.panel.chat.view.copilot.focus"
   }
 ]

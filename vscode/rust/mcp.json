@@ -1,0 +1,11 @@
+{
+  "servers": {},
+  "_policy": {
+    "autostart": "never",
+    "note": "Rust profile keeps MCP disabled by default."
+  },
+  "_candidates": [
+    "filesystem",
+    "github"
+  ]
+}

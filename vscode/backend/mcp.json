@@ -1,0 +1,12 @@
+{
+  "servers": {},
+  "_policy": {
+    "autostart": "never",
+    "note": "Enable database, GitHub, or filesystem MCP servers only for trusted workspaces."
+  },
+  "_candidates": [
+    "filesystem",
+    "github",
+    "database"
+  ]
+}

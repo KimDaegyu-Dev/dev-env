@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "esbenp.prettier-vscode",
+    "figma.figma-vscode-extension",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next",
+    "ritwickdey.liveserver",
+    "stylelint.vscode-stylelint",
+    "yoavbls.pretty-ts-errors"
+  ],
+  "reviewNeeded": [
+    "csstools.postcss",
+    "styled-components.vscode-styled-components",
+    "usernamehw.errorlens"
+  ]
+}

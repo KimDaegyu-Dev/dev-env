@@ -1,0 +1,16 @@
+{
+  "Card classes": {
+    "prefix": "twcard",
+    "body": [
+      "rounded-2xl border border-slate-200 bg-white/80 p-6 shadow-sm backdrop-blur"
+    ],
+    "description": "Tailwind card class group"
+  },
+  "Page shell classes": {
+    "prefix": "twshell",
+    "body": [
+      "min-h-screen bg-slate-950 px-6 py-10 text-slate-50"
+    ],
+    "description": "Tailwind page shell class group"
+  }
+}

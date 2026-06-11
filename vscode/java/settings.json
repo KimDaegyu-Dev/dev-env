@@ -1,0 +1,33 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#3F2D00",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#251A00",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#B45309",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#B45309"
+  },
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+  "task.allowAutomaticTasks": "off",
+  "java.test.config": {},
+  "java.configuration.updateBuildConfiguration": "interactive",
+  "chat.mcp.autostart": "never",
+  "chat.mcp.gallery.enabled": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.java"
+  }
+}

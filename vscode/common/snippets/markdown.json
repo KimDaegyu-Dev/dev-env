@@ -1,0 +1,12 @@
+{
+  "setup checklist": {
+    "prefix": "check",
+    "body": ["## Checklist", "", "- [ ] ${1:First item}", "- [ ] ${2:Second item}"],
+    "description": "Markdown checklist"
+  },
+  "note block": {
+    "prefix": "note",
+    "body": ["> Note", "> ${1:Write the note here.}"],
+    "description": "Markdown note block"
+  }
+}

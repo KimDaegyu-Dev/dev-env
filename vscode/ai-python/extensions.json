@@ -1,0 +1,22 @@
+{
+  "recommendations": [
+    "charliermarsh.ruff",
+    "github.copilot",
+    "github.copilot-chat",
+    "mechatroner.rainbow-csv",
+    "ms-python.debugpy",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.datawrangler",
+    "ms-toolsai.jupyter",
+    "ms-toolsai.vscode-jupyter-cell-tags",
+    "ms-toolsai.vscode-jupyter-slideshow",
+    "tamasfe.even-better-toml"
+  ],
+  "reviewNeeded": [
+    "ms-python.mypy-type-checker",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "redhat.vscode-yaml"
+  ]
+}

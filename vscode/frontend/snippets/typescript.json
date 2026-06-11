@@ -1,0 +1,22 @@
+{
+  "Async function": {
+    "prefix": "afn",
+    "body": [
+      "export async function ${1:name}(${2}) {",
+      "  ${3:return undefined;}",
+      "}"
+    ],
+    "description": "Exported async function"
+  },
+  "Typed fetch": {
+    "prefix": "tfetch",
+    "body": [
+      "const response = await fetch(${1:\"/api/example\"});",
+      "if (!response.ok) {",
+      "  throw new Error(`Request failed: ${response.status}`);",
+      "}",
+      "const ${2:data} = (await response.json()) as ${3:unknown};"
+    ],
+    "description": "Typed fetch block"
+  }
+}

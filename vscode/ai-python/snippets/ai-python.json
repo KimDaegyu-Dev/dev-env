@@ -1,7 +1,40 @@
-main guard
-argparse
-pytest test
-dataclass
-pydantic model
-pathlib file read
-notebook cell helper
+{
+  "main guard": {
+    "prefix": "main",
+    "body": ["def main() -> None:", "    ${1:pass}", "", "", "if __name__ == \"__main__\":", "    main()"],
+    "description": "Python main guard"
+  },
+  "argparse": {
+    "prefix": "argparse",
+    "body": [
+      "import argparse",
+      "",
+      "",
+      "def parse_args() -> argparse.Namespace:",
+      "    parser = argparse.ArgumentParser(description=\"${1:description}\")",
+      "    parser.add_argument(\"${2:input}\")",
+      "    return parser.parse_args()"
+    ],
+    "description": "argparse parser"
+  },
+  "pytest": {
+    "prefix": "pytest",
+    "body": ["def test_${1:name}() -> None:", "    ${2:assert True}"],
+    "description": "pytest test function"
+  },
+  "dataclass": {
+    "prefix": "dataclass",
+    "body": ["from dataclasses import dataclass", "", "", "@dataclass(frozen=True)", "class ${1:Name}:", "    ${2:value}: ${3:str}"],
+    "description": "Frozen dataclass"
+  },
+  "pydantic model": {
+    "prefix": "pmodel",
+    "body": ["from pydantic import BaseModel", "", "", "class ${1:ModelName}(BaseModel):", "    ${2:value}: ${3:str}"],
+    "description": "Pydantic BaseModel"
+  },
+  "pathlib read text": {
+    "prefix": "pread",
+    "body": ["from pathlib import Path", "", "${1:path} = Path(${2:\"data/input.txt\"})", "${3:text} = ${1:path}.read_text(encoding=\"utf-8\")"],
+    "description": "Read text with pathlib"
+  }
+}

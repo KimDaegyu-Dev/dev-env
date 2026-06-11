@@ -1,0 +1,12 @@
+{
+  "select limit": {
+    "prefix": "sel",
+    "body": ["select", "  ${1:*}", "from ${2:table_name}", "limit ${3:100};"],
+    "description": "SELECT with limit"
+  },
+  "transaction": {
+    "prefix": "tx",
+    "body": ["begin;", "", "${1:-- statements}", "", "commit;"],
+    "description": "SQL transaction"
+  }
+}

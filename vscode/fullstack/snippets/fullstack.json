@@ -1,0 +1,12 @@
+{
+  "env example variable": {
+    "prefix": "envvar",
+    "body": ["${1:SERVICE_URL}=https://example.local", "${2:FEATURE_FLAG}=false"],
+    "description": "Safe .env.example variables"
+  },
+  "api route note": {
+    "prefix": "apinote",
+    "body": ["## ${1:Endpoint}", "", "- Method: `${2:GET}`", "- Path: `${3:/api/example}`", "- Auth: `${4:required}`"],
+    "description": "API route documentation block"
+  }
+}

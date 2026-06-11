@@ -1,0 +1,11 @@
+{
+  "servers": {},
+  "_policy": {
+    "autostart": "never",
+    "note": "MCP servers are documented here as candidates only. Enable specific servers manually per profile."
+  },
+  "_candidates": [
+    "filesystem",
+    "github"
+  ]
+}

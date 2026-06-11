@@ -1,0 +1,12 @@
+{
+  "safe shell header": {
+    "prefix": "safe-sh",
+    "body": ["#!/usr/bin/env bash", "set -euo pipefail", "", "${1:main \"$@\"}"],
+    "description": "Safe shell script header"
+  },
+  "case argument": {
+    "prefix": "casearg",
+    "body": ["case \"${1:$1}\" in", "  ${2:option})", "    ${3:echo \"selected\"}", "    ;;", "  *)", "    echo \"Unknown option: ${1:$1}\" >&2", "    exit 1", "    ;;", "esac"],
+    "description": "Shell case argument block"
+  }
+}

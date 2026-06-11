@@ -1,0 +1,7 @@
+{
+  "implementation prompt": {
+    "prefix": "implprompt",
+    "body": ["Goal: ${1:describe goal}", "", "Constraints:", "- ${2:no secrets}", "", "Acceptance criteria:", "- ${3:tests pass}"],
+    "description": "Structured implementation prompt"
+  }
+}

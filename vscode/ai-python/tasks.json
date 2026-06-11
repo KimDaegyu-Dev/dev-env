@@ -1,7 +1,43 @@
-python -m venv .venv
-uv sync
-poetry install
-pytest
-ruff check
-ruff format
-jupyter lab
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "python: uv sync",
+      "type": "shell",
+      "command": "uv sync",
+      "problemMatcher": []
+    },
+    {
+      "label": "python: pytest",
+      "type": "shell",
+      "command": "pytest",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "python: ruff check",
+      "type": "shell",
+      "command": "ruff check .",
+      "problemMatcher": []
+    },
+    {
+      "label": "python: ruff format check",
+      "type": "shell",
+      "command": "ruff format --check .",
+      "problemMatcher": []
+    },
+    {
+      "label": "python: jupyter lab",
+      "type": "shell",
+      "command": "jupyter lab",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "python: poetry install",
+      "type": "shell",
+      "command": "poetry install",
+      "problemMatcher": []
+    }
+  ]
+}

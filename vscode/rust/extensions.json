@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "rust-lang.rust-analyzer",
+    "tamasfe.even-better-toml",
+    "vadimcn.vscode-lldb",
+    "serayuzgur.crates"
+  ],
+  "reviewNeeded": [
+    "fill-labs.dependi",
+    "swellaby.vscode-rust-test-adapter"
+  ]
+}

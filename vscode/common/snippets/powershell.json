@@ -1,0 +1,7 @@
+{
+  "param block": {
+    "prefix": "param",
+    "body": ["param(", "    [string]$${1:Profile} = \"${2:common}\"", ")", "", "${3:Write-Host \"Profile: $${1:Profile}\"}"],
+    "description": "PowerShell param block"
+  }
+}

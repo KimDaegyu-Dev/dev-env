@@ -1,0 +1,7 @@
+{
+  "secret ignores": {
+    "prefix": "secrets",
+    "body": [".env", ".env.local", "*.pem", "*.key", "id_rsa", "id_ed25519"],
+    "description": "Ignore common secret files"
+  }
+}

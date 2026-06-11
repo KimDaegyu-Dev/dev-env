@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "llvm-vs-code-extensions.vscode-clangd",
+    "ms-vscode.cmake-tools",
+    "ms-vscode.makefile-tools",
+    "vadimcn.vscode-lldb",
+    "twxs.cmake"
+  ],
+  "reviewNeeded": [
+    "ms-vscode.cpptools",
+    "ms-vscode.cpptools-extension-pack"
+  ]
+}

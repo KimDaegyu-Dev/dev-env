@@ -1,6 +1,32 @@
-cmake configure
-cmake build
-cmake test
-ninja build
-make build
-run executable
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cpp: cmake configure",
+      "type": "shell",
+      "command": "cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "problemMatcher": []
+    },
+    {
+      "label": "cpp: cmake build",
+      "type": "shell",
+      "command": "cmake --build build",
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "cpp: cmake test",
+      "type": "shell",
+      "command": "ctest --test-dir build --output-on-failure",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "cpp: make build",
+      "type": "shell",
+      "command": "make",
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

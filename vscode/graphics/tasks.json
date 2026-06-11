@@ -1,6 +1,43 @@
-compile shaders
-build debug
-build release
-run sample
-open capture folder
-run render test
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "graphics: cmake configure",
+      "type": "shell",
+      "command": "cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "problemMatcher": []
+    },
+    {
+      "label": "graphics: cmake build",
+      "type": "shell",
+      "command": "cmake --build build",
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "graphics: run sample",
+      "type": "shell",
+      "command": "./build/sample",
+      "problemMatcher": []
+    },
+    {
+      "label": "graphics: compile vertex shader",
+      "type": "shell",
+      "command": "glslangValidator -V shaders/main.vert -o build/main.vert.spv",
+      "problemMatcher": []
+    },
+    {
+      "label": "graphics: compile fragment shader",
+      "type": "shell",
+      "command": "glslangValidator -V shaders/main.frag -o build/main.frag.spv",
+      "problemMatcher": []
+    },
+    {
+      "label": "graphics: cargo test",
+      "type": "shell",
+      "command": "cargo test",
+      "group": "test",
+      "problemMatcher": ["$rustc"]
+    }
+  ]
+}

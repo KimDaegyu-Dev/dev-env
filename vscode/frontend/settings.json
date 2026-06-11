@@ -2,7 +2,6 @@
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "vs-seti",
   "workbench.productIconTheme": "Default",
-
   "workbench.colorCustomizations": {
     "activityBar.background": "#3B185F",
     "activityBar.foreground": "#FFFFFF",
@@ -14,16 +13,23 @@
   },
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
     "source.fixAll.stylelint": "explicit"
   },
-
   "eslint.codeActionsOnSave.rules": true,
-
   "js/ts.updateImportsOnFileMove.enabled": "always",
-
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "tailwindCSS.experimental.classRegex": [
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
+  ],
+  "git.autofetch": true,
+  "workbench.editor.enablePreview": false,
+  "task.allowAutomaticTasks": "off",
+  "chat.mcp.autostart": "never",
+  "chat.mcp.gallery.enabled": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -36,6 +42,9 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -44,9 +53,6 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
     "editor.unicodeHighlight.invisibleCharacters": false
   },
-
   "svg.preview.mode": "svg",
-  "figma.autocompleteBlocks": true,
-  "git.autofetch": true,
-  "workbench.editor.enablePreview": false
+  "figma.autocompleteBlocks": true
 }

@@ -1,9 +1,67 @@
-React component
-React hook
-Next.js page/component
-fetch wrapper
-try/catch async function
-useEffect skeleton
-Tailwind class block
-Zustand store
-TanStack Query hook
+{
+  "React function component": {
+    "prefix": "rfc",
+    "body": [
+      "type ${1:ComponentName}Props = {",
+      "  ${2:children?: React.ReactNode;}",
+      "};",
+      "",
+      "export function ${1:ComponentName}({ ${3:children} }: ${1:ComponentName}Props) {",
+      "  return <${4:section}>${3:children}</${4:section}>;",
+      "}"
+    ],
+    "description": "Typed React function component"
+  },
+  "Next.js page": {
+    "prefix": "nxpage",
+    "body": [
+      "export default function ${1:PageName}Page() {",
+      "  return (",
+      "    <main className=\"${2:min-h-screen p-6}\">",
+      "      <h1 className=\"${3:text-3xl font-semibold}\">${4:Page title}</h1>",
+      "    </main>",
+      "  );",
+      "}"
+    ],
+    "description": "Next.js app router page"
+  },
+  "React hook": {
+    "prefix": "hook",
+    "body": [
+      "export function use${1:Feature}() {",
+      "  const [${2:value}, set${3:Value}] = useState(${4:null});",
+      "",
+      "  return { ${2:value}, set${3:Value} };",
+      "}"
+    ],
+    "description": "Simple custom React hook"
+  },
+  "Async fetch helper": {
+    "prefix": "fetcher",
+    "body": [
+      "export async function ${1:fetchData}() {",
+      "  const response = await fetch(${2:\"/api/example\"});",
+      "",
+      "  if (!response.ok) {",
+      "    throw new Error(`Request failed: ${response.status}`);",
+      "  }",
+      "",
+      "  return response.json() as Promise<${3:unknown}>;",
+      "}"
+    ],
+    "description": "Typed fetch helper with ok check"
+  },
+  "Async function with try/catch": {
+    "prefix": "atry",
+    "body": [
+      "async function ${1:run}() {",
+      "  try {",
+      "    ${2:await doWork();}",
+      "  } catch (error) {",
+      "    console.error(error);",
+      "  }",
+      "}"
+    ],
+    "description": "Async function with error handling"
+  }
+}

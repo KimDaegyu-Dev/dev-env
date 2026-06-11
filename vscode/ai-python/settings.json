@@ -2,7 +2,6 @@
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "vs-seti",
   "workbench.productIconTheme": "Default",
-
   "workbench.colorCustomizations": {
     "activityBar.background": "#164E63",
     "activityBar.foreground": "#FFFFFF",
@@ -14,20 +13,31 @@
   },
   "editor.formatOnSave": true,
   "workbench.editor.enablePreview": false,
-
-  "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff"
-  },
-
+  "task.allowAutomaticTasks": "off",
   "python.analysis.typeCheckingMode": "basic",
-
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "jupyter.askForKernelRestart": false,
+  "notebook.formatOnSave.enabled": true,
   "chat.mcp.autostart": "never",
   "chat.mcp.gallery.enabled": true,
-
-  "chat.tools.terminal.autoApprove": {
-    "python --version": true,
-    "pytest": true,
-    "ruff check": true,
-    "ruff format": true
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": false,
+    "scminput": false
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  "[jupyter]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   }
 }

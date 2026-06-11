@@ -2,7 +2,6 @@
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "vs-seti",
   "workbench.productIconTheme": "Default",
-
   "workbench.colorCustomizations": {
     "activityBar.background": "#450A0A",
     "activityBar.foreground": "#FFFFFF",
@@ -14,9 +13,20 @@
   },
   "editor.formatOnSave": true,
   "workbench.editor.enablePreview": false,
-
+  "task.allowAutomaticTasks": "off",
+  "cmake.options.statusBarVisibility": "visible",
+  "cmake.configureOnOpen": false,
+  "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed"
+  ],
+  "glsllint.glslangValidatorPath": "glslangValidator",
+  "chat.mcp.autostart": "never",
+  "chat.mcp.gallery.enabled": true,
   "[glsl]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "slevesque.shader"
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
@@ -26,8 +36,5 @@
   },
   "[c]": {
     "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
-  },
-
-  "cmake.options.statusBarVisibility": "visible",
-  "rust-analyzer.debug.engine": "vadimcn.vscode-lldb"
+  }
 }
