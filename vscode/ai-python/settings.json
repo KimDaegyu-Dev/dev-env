@@ -1,0 +1,33 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#164E63",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#083344",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#0891B2",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#0891B2"
+  },
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+  "python.analysis.typeCheckingMode": "basic",
+
+  "chat.mcp.autostart": "never",
+  "chat.mcp.gallery.enabled": true,
+
+  "chat.tools.terminal.autoApprove": {
+    "python --version": true,
+    "pytest": true,
+    "ruff check": true,
+    "ruff format": true
+  }
+}

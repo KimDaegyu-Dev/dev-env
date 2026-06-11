@@ -1,0 +1,7 @@
+docker compose up
+docker compose down
+docker compose logs
+db migrate
+db seed
+run server
+run tests

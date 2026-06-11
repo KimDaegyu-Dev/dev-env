@@ -1,0 +1,34 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#0B1E3D",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#071426",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#1D4ED8",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#1D4ED8"
+  },
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+
+  "cmake.options.statusBarVisibility": "visible",
+
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+
+  "clangd.arguments": [
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed"
+  ],
+
+  "github.copilot.nextEditSuggestions.enabled": true
+}

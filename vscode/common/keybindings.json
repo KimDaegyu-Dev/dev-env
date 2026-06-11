@@ -1,0 +1,26 @@
+빌드
+테스트
+포맷
+터미널 열기
+문제 패널 열기
+Git 변경사항 보기
+현재 파일 실행
+Task 실행
+[
+  {
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.tasks.build"
+  },
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.tasks.test"
+  },
+  {
+    "key": "ctrl+alt+f",
+    "command": "editor.action.formatDocument"
+  },
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#3B185F",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#2A0944",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#A12568",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#A12568"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  "eslint.codeActionsOnSave.rules": true,
+
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false
+  },
+
+  "svg.preview.mode": "svg",
+  "figma.autocompleteBlocks": true,
+  "git.autofetch": true,
+  "workbench.editor.enablePreview": false
+}

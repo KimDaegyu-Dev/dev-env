@@ -1,0 +1,6 @@
+compile shaders
+build debug
+build release
+run sample
+open capture folder
+run render test

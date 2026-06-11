@@ -1,0 +1,7 @@
+python -m venv .venv
+uv sync
+poetry install
+pytest
+ruff check
+ruff format
+jupyter lab

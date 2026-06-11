@@ -1,0 +1,30 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#312E81",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#1E1B4B",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#7C3AED",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#7C3AED"
+  },
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.stylelint": "explicit"
+  },
+
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  "git.autofetch": true,
+  "workbench.editor.enablePreview": false,
+
+  "chat.mcp.autostart": "never",
+  "chat.mcp.gallery.enabled": true
+}

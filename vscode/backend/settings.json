@@ -1,0 +1,25 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#064E3B",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#022C22",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#047857",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#047857"
+  },
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+  "git.autofetch": true,
+
+  "chat.tools.terminal.autoApprove": {
+    "docker compose ps": true,
+    "docker compose logs": true,
+    "docker compose up": true,
+    "docker compose down": false
+  }
+}

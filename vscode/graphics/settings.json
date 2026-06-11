@@ -1,0 +1,33 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#450A0A",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#1C0A0A",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#B91C1C",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#B91C1C"
+  },
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+
+  "[glsl]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+
+  "cmake.options.statusBarVisibility": "visible",
+  "rust-analyzer.debug.engine": "vadimcn.vscode-lldb"
+}

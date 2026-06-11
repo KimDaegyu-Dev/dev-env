@@ -1,0 +1,39 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.productIconTheme": "Default",
+
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#5C2E00",
+    "activityBar.foreground": "#FFFFFF",
+    "titleBar.activeBackground": "#3D1F00",
+    "titleBar.activeForeground": "#FFFFFF",
+    "statusBar.background": "#B7410E",
+    "statusBar.foreground": "#FFFFFF",
+    "sideBar.border": "#B7410E"
+  },
+  "editor.formatOnSave": true,
+  "workbench.editor.enablePreview": false,
+  "task.allowAutomaticTasks": "off",
+
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+
+  "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+
+  "github.copilot.nextEditSuggestions.enabled": true,
+
+  "chat.mcp.autostart": "never",
+  "chat.mcp.gallery.enabled": true,
+
+  "chat.tools.terminal.autoApprove": {
+    "cargo check": true,
+    "cargo test": true,
+    "cargo clippy": true,
+    "cargo fmt": true
+  }
+}
