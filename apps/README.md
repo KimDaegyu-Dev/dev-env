@@ -53,18 +53,45 @@ winget import -i apps/windows/winget.json --accept-package-agreements --accept-s
 
 패키지 매니저로 설치하기 어렵거나, 계정 로그인/라이선스가 필요한 앱.
 
-### Vulkan SDK
+[Vulkan SDK](https://vulkan.lunarg.com/sdk/home)
 
 - 설치 후 `VULKAN_SDK` 환경 변수 확인
 - `glslc --version` 확인
 - macOS에서는 MoltenVK 포함 여부 확인
 
-### RenderDoc
+[Slang](https://shader-slang.org/)
+shader 언어
+
+[RenderDoc](https://renderdoc.org)
+
+GPU 프레임 디버깅.
 
 - 설치 후 graphics project README의 capture workflow 확인
 - capture 파일은 repo에 커밋하지 않기
 
-### Slang
+[Nsight Graphics](https://developer.nvidia.com/nsight-graphics)
+GPU 파이프라인 분석.
+
+[Nsight System](https://developer.nvidia.com/nsight-systems)
+CPU/GPU 동시 프로파일링.
+
+[USD Viewer](https://openusd.org/release/index.html)
+USD 씬 검사.
+
+[OpenEXR](https://openexr.com/en/latest)
+AOV 디버깅.
+
+[OpenImageIO](https://openimageio.readthedocs.io/en/v3.1.14.0)
+EXR 분석.
+
+```bash
+oiiotool
+```
+
+[tev](https://github.com/Tom94/tev)
+EDR viewer
+렌더링 연구 쪽에서 많이 씀.
+EXR 비교.
 
 ## Fonts
 
