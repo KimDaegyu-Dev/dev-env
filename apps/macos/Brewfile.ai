@@ -1,0 +1,25 @@
+# =============================================================================
+# Design / Creative
+# =============================================================================
+
+# ComfyUI 직접 설치
+# cask "comfyui"
+# ComfyUI, Stable Diffusion, Flux 계열을 묶어서 관리하고 싶으면 선택
+# cask "stability-matrix"
+
+# =============================================================================
+# Development
+# =============================================================================
+
+cask "anaconda"
+
+# windsurf -> devin-desktop으로 변경
+cask "devin-desktop"
+cask "codex"
+# Google Antigravity 계열
+cask "antigravity"
+cask "antigravity-cli"
+cask "antigravity-ide"
+# Gemini CLI는 Homebrew Formula에 deprecation 일정이 표시되어 있으므로
+# 장기적으로 npm 설치도 검토.
+brew "gemini-cli"

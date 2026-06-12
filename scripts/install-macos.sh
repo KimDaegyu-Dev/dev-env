@@ -101,3 +101,29 @@ case "${1:-}" in
     exit 1
     ;;
 esac
+
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+BREWFILE="$ROOT_DIR/apps/macos/Brewfile"
+
+echo "== macOS bootstrap =="
+
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew is not installed."
+  echo "Install Homebrew first from the official website, then rerun this script."
+  exit 1
+fi
+
+if [ ! -f "$BREWFILE" ]; then
+  echo "Missing Brewfile: $BREWFILE"
+  exit 1
+fi
+
+echo "Installing apps from Brewfile..."
+brew bundle --file="$BREWFILE"
+
+echo
+echo "Done."

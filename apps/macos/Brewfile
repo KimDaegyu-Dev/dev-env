@@ -1,0 +1,75 @@
+# Taps
+tap "homebrew/bundle"
+
+# Core CLI
+# brew "git"
+# brew "gh"
+# brew "curl"
+# brew "wget"
+# brew "jq"
+# brew "ripgrep"
+# brew "fd"
+# brew "fzf"
+# brew "tree"
+# brew "bat"
+# brew "eza"
+# brew "zoxide"
+# brew "starship"
+# brew "tmux"
+
+# Development
+# brew "node"
+# brew "pnpm"
+# brew "python"
+# brew "uv"
+# brew "rustup"
+# brew "cmake"
+# brew "ninja"
+# brew "llvm"
+# brew "pkg-config"
+
+# Graphics / Systems
+# brew "glslang"
+# brew "shaderc"
+# brew "vulkan-tools"
+
+# Apps
+cask "google-chrome"
+cask "raycast"
+cask "font-jetbrains-mono-nerd-font"
+
+
+
+# =============================================================================
+# Productivity / Notes / Transfer
+# =============================================================================
+
+cask "notion"
+cask "obsidian"
+cask "localsend"
+cask "parsec"
+cask "discord"
+
+# Syncthing은 CLI와 GUI 중 취향에 따라 하나만 써도 됨
+# brew "syncthing"
+cask "syncthing-app"
+
+cask "tailscale-app"
+cask "cloudflare-warp"
+cask "fontbase"
+cask "rectangle"
+
+
+# =============================================================================
+# macOS Utilities
+# =============================================================================
+
+cask "iterm2"
+cask "karabiner-elements"
+cask "scroll-reverser"
+
+# Mac App Store cli
+brew "mas"
+# Xcode 관리 도구
+brew "xcodes"
+cask "xcodes-app"
