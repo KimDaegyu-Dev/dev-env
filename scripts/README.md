@@ -4,6 +4,8 @@ chmod +x scripts/apply-vscode-profiles.sh
 
 ./scripts/apply-vscode-profiles.sh
 
+# 모든 프로필 파일 적용
+
 chmod +x scripts/apply-vscode-profiles.mjs
 # 먼저 삭제될 확장 확인
 node scripts/advanced/apply-vscode-profile-files.mjs ai-python --sync-extensions --dry-run

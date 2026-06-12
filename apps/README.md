@@ -1,24 +1,46 @@
-cd apps/macos
-brew bundle
+# MacOS
 
 현재 설치된 목록
 brew bundle dump --file=apps/macos/Brewfile --force
 
-# 1. Homebrew 설치 후
+### 1. Homebrew 설치 후
 
+```bash
 cd ~/Documents/GitHub/\_dev-env
+```
 
-# 2. Brewfile 기반 설치
+### 2. Brewfile 기반 설치
 
+```bash
 brew bundle --file apps/macos/Brewfile
+brew bundle --file apps/macos/Brewfile.ai
+```
 
-# 3. Xcode 설치가 필요하면
+### 3. Brewfile 기반 삭제
 
+```bash
+chmod +x ./scripts/prune-macos-brewfile.sh
+
+./scripts/prune-macos-brewfile.sh apps/macos/Brewfile.ai
+
+#앱 설정 데이터까지 더 강하게 지우기:
+#앱 설정, 캐시, Application Support 일부가 같이 삭제될 수 있어서, 로그인 정보나 설정을 보존하고 싶으면 쓰지 않는 게 좋습니다.
+./scripts/prune-macos-brewfile.sh apps/macos/Brewfile.ai --zap
+```
+
+### 4. Appstore 설치가 필요하면
+
+```bash
 mas install 497799835
+```
 
-# 4. Xcode 라이선스 동의
+### 5. Xcode 라이선스 동의
 
+```bash
 sudo xcodebuild -license accept
+```
+
+# Window
 
 winget은 설치된 앱 목록을 JSON으로 export하고, 그 JSON을 import해서 batch install할 수 있습니다.
 
@@ -26,78 +48,6 @@ winget export
 winget export -o apps/windows/winget.json
 winget import
 winget import -i apps/windows/winget.json --accept-package-agreements --accept-source-agreements
-
-# App Categories
-
-## Essential
-
-새 환경에서 반드시 필요한 기본 도구.
-
-- Git
-- GitHub CLI
-- VS Code
-- Browser
-- Terminal
-- Package manager
-
-## CLI
-
-터미널 작업용.
-
-- ripgrep
-- fd
-- jq
-- fzf
-- bat
-- eza
-- zoxide
-- starship
-- tmux
-
-## Frontend
-
-- Node.js
-- pnpm
-- Chrome
-- Figma
-
-## Backend
-
-- Docker
-- PostgreSQL client
-- Redis client
-- Terraform
-
-## Rust
-
-- rustup
-- lldb
-
-## C++
-
-- CMake
-- Ninja
-- LLVM
-- clangd
-
-## Graphics
-
-- Vulkan SDK
-- RenderDoc
-- shaderc
-- glslang
-- glslc
-
-## AI / Python
-
-- Python
-- uv
-- Jupyter
-- Ollama, if used
-
-## Optional
-
-설치하면 좋지만 필수는 아닌 앱.
 
 ## Manual
 
@@ -114,14 +64,7 @@ winget import -i apps/windows/winget.json --accept-package-agreements --accept-s
 - 설치 후 graphics project README의 capture workflow 확인
 - capture 파일은 repo에 커밋하지 않기
 
-### Docker Desktop
-
-- 로그인 필요
-- resource limit 설정 확인
-
-### Figma
-
-- 로그인 필요
+### Slang
 
 ## Fonts
 

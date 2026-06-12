@@ -23,3 +23,6 @@ cask "antigravity-ide"
 # Gemini CLI는 Homebrew Formula에 deprecation 일정이 표시되어 있으므로
 # 장기적으로 npm 설치도 검토.
 brew "gemini-cli"
+cask "cursor"
+cask "kiro"
+cask "claude-code"

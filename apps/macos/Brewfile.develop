@@ -14,7 +14,7 @@ cask "iterm2"
 
 cask "github"
 cask "visual-studio-code"
-
+cask "neovide"
 
 
 # =============================================================================
