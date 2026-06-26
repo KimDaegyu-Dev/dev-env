@@ -1,0 +1,38 @@
+{
+  "name": "3d-graphics",
+  "description": "Three.js, WebGPU, GSAP, assets, and visual regression workflow pack",
+  "boundary": {
+    "owns": [
+      "Browser 3D scene composition and animation hooks",
+      "WebGPU/Three.js asset folders and visual regression workflow",
+      "Model, texture, HDR, and generated asset placement conventions",
+      "Canvas render verification tasks"
+    ],
+    "doesNotOwn": [
+      "Low-level Vulkan runtime internals",
+      "Backend API business rules",
+      "Terraform deployment topology",
+      "Final design source ownership and licensing decisions"
+    ],
+    "handoffs": [
+      "Consumes visual-design assets with license metadata",
+      "May consume shader outputs from computer-graphics experiments",
+      "Exposes visual checks to frontend and UI/UX review"
+    ],
+    "interfaces": [
+      "assets/models/",
+      "assets/textures/",
+      "assets/hdr/",
+      "visual:test and assets:check scripts"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/settings.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

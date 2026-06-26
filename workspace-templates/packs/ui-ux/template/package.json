@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "tokens:check": "node scripts/check-design-tokens.mjs",
+    "a11y:check": "echo \"Add axe or Playwright accessibility checks\""
+  },
+  "devDependencies": {
+    "storybook": "^8.4.7"
+  }
+}

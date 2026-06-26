@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "agent:status": "./scripts/agent-status.sh",
+    "verify:fast": "./scripts/verify.sh fast",
+    "verify:full": "./scripts/verify.sh full",
+    "harness:doctor": "./scripts/harness-doctor.sh"
+  }
+}

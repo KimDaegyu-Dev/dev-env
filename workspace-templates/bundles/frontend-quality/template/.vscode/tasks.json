@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "quality: storybook",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} storybook",
+      "problemMatcher": []
+    },
+    {
+      "label": "quality: e2e",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} test:e2e",
+      "problemMatcher": []
+    },
+    {
+      "label": "quality: dead code",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} analyze:dead",
+      "problemMatcher": []
+    }
+  ]
+}

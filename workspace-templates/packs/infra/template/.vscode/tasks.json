@@ -1,0 +1,23 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "infra: fmt",
+      "type": "shell",
+      "command": "terraform -chdir=infra fmt -recursive",
+      "problemMatcher": []
+    },
+    {
+      "label": "infra: validate",
+      "type": "shell",
+      "command": "terraform -chdir=infra validate",
+      "problemMatcher": []
+    },
+    {
+      "label": "infra: plan",
+      "type": "shell",
+      "command": "terraform -chdir=infra plan",
+      "problemMatcher": []
+    }
+  ]
+}

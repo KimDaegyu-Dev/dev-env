@@ -1,0 +1,6 @@
+{
+  "name": "backend-api",
+  "description": "NestJS-style backend API service with local dependencies",
+  "packs": ["backend"],
+  "bundles": ["backend-nest"]
+}

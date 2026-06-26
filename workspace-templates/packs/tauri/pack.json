@@ -1,0 +1,35 @@
+{
+  "name": "tauri",
+  "description": "Tauri desktop/mobile shell pack",
+  "boundary": {
+    "owns": [
+      "Desktop/mobile shell configuration and platform capability notes",
+      "Tauri command scripts and generated-platform ignore policy",
+      "Rust shell handoff with the frontend app"
+    ],
+    "doesNotOwn": [
+      "Frontend feature implementation",
+      "Backend service behavior",
+      "Cloud infrastructure",
+      "Visual design source files"
+    ],
+    "handoffs": [
+      "Wraps frontend build output",
+      "Publishes platform permissions and native capability constraints",
+      "Depends on Rust tooling for shell code"
+    ],
+    "interfaces": [
+      "src-tauri/",
+      "tauri:dev and tauri:build scripts",
+      "platform capability docs"
+    ]
+  },
+  "dependsOn": ["common", "frontend"],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

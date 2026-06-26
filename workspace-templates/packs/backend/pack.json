@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "description": "NestJS, zod, rxjs, Docker Compose, API testing, and observability backend pack",
+  "boundary": {
+    "owns": [
+      "API endpoints, DTOs, validation, and service orchestration",
+      "Backend runtime configuration and local service dependencies",
+      "Persistence integration and migration command placeholders",
+      "Structured logging, error handling, and service observability notes"
+    ],
+    "doesNotOwn": [
+      "Client route structure or browser UI state",
+      "Cloud infrastructure resources outside local development compose files",
+      "Design tokens or visual asset export policy",
+      "GPU shader or render pipeline concerns"
+    ],
+    "handoffs": [
+      "Publishes API contracts and environment variables for frontend consumers",
+      "Depends on infra for deployment, secrets, and managed services",
+      "Feeds runbook metrics and failure modes into operations docs"
+    ],
+    "interfaces": [
+      "API DTOs and schemas",
+      "DATABASE_URL and service env vars",
+      "docker-compose.yml for local dependencies",
+      "db:migrate and seed scripts"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".env.example": "appendUnique",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  },
+  "scripts": {
+    "dev": "nest start --watch",
+    "build": "nest build",
+    "test": "vitest run",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  }
+}

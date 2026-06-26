@@ -1,0 +1,43 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "workspace: check",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} check",
+      "problemMatcher": []
+    },
+    {
+      "label": "workspace: format",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} format",
+      "problemMatcher": []
+    },
+    {
+      "label": "workspace: lint",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} lint",
+      "problemMatcher": []
+    },
+    {
+      "label": "workspace: typecheck",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} typecheck",
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "workspace: test",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} test",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "workspace: build",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} build",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

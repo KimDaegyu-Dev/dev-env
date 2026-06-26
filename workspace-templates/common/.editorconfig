@@ -1,0 +1,22 @@
+# VS Code, JetBrains, CLI, 에이전트가 최소한의 공백·줄바꿈 기준을 공유하게 해줍니다.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{bat,cmd}]
+end_of_line = crlf
+
+[*.ps1]
+end_of_line = crlf
+
+[Makefile]
+indent_style = tab

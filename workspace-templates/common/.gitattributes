@@ -1,0 +1,23 @@
+# 줄바꿈 때문에 건드리지 않은 파일까지 diff가 뜨는 문제를 막는 용도입니다.
+# Windows와 macOS/Linux를 오갈 때 특히 중요합니다.
+* text=auto eol=lf
+
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.7z binary
+
+*.glb binary
+*.gltf text eol=lf
+*.spv binary
+*.blend binary

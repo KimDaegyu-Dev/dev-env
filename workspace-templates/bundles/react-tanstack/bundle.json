@@ -1,0 +1,21 @@
+{
+  "name": "react-tanstack",
+  "description": "React application bundle with TanStack Query, Router, Form, Table, axios, zod, and Zustand",
+  "includes": [
+    "React and React DOM",
+    "TanStack Query, Router, Form, and Table",
+    "axios and zod for client API boundaries",
+    "zustand for small client state stores",
+    "Tailwind CSS integration dependencies"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".env.example": "appendUnique",
+    ".vscode/settings.json": "deep"
+  },
+  "scripts": {
+    "frontend:dev": "vite",
+    "frontend:build": "vite build"
+  }
+}

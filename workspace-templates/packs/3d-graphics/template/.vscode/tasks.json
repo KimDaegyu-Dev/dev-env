@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "3d: asset check",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} assets:check",
+      "problemMatcher": []
+    },
+    {
+      "label": "3d: visual test",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} visual:test",
+      "problemMatcher": []
+    }
+  ]
+}

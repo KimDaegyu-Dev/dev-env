@@ -1,0 +1,37 @@
+{
+  "name": "infra",
+  "description": "Terraform, Docker, CI/CD, secrets, deployment, and rollback infrastructure pack",
+  "boundary": {
+    "owns": [
+      "Terraform modules and environment topology",
+      "CI/CD deployment workflow templates",
+      "Secret, state, rollback, and environment separation policy",
+      "Infrastructure validation and plan tasks"
+    ],
+    "doesNotOwn": [
+      "Application business logic",
+      "Frontend component or route implementation",
+      "Design assets and UX decisions",
+      "Shader, model, or render-pipeline code"
+    ],
+    "handoffs": [
+      "Consumes backend/frontend build artifacts and required env vars",
+      "Publishes deployment outputs and operational constraints",
+      "Coordinates rollback procedure with runbook"
+    ],
+    "interfaces": [
+      "infra/*.tf",
+      "TF_VAR_* environment variables",
+      "GitHub Actions workflows",
+      "deployment and rollback docs"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    ".env.example": "appendUnique",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

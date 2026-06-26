@@ -1,0 +1,17 @@
+{
+  "color": {
+    "background": "#ffffff",
+    "foreground": "#111111",
+    "accent": "#2563eb"
+  },
+  "space": {
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px"
+  },
+  "radius": {
+    "sm": "4px",
+    "md": "8px"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "backend-nest",
+  "description": "NestJS backend bundle with config, rxjs, axios, zod, reflect-metadata, and Vitest",
+  "includes": [
+    "NestJS core packages",
+    "NestJS config and testing",
+    "axios, zod, rxjs, and reflect-metadata",
+    "Vitest and tsx"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".env.example": "appendUnique"
+  },
+  "scripts": {
+    "backend:dev": "nest start --watch",
+    "backend:build": "nest build"
+  }
+}

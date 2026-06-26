@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "rust-vulkan: cargo check",
+      "type": "shell",
+      "command": "cargo check",
+      "problemMatcher": "$rustc"
+    },
+    {
+      "label": "rust-vulkan: shaders",
+      "type": "shell",
+      "command": "bash scripts/compile-shaders.sh",
+      "problemMatcher": []
+    }
+  ]
+}

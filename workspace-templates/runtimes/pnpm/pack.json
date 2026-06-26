@@ -1,0 +1,14 @@
+{
+  "name": "pnpm",
+  "description": "Node.js workspace runtime using pnpm",
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    "pnpm-workspace.yaml": "appendUnique"
+  },
+  "scripts": {
+    "install": "pnpm install",
+    "dev": "pnpm dev",
+    "commandPrefix": "pnpm"
+  }
+}

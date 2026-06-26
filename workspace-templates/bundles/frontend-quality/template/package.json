@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "storybook": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
+    "analyze:dead": "knip",
+    "analyze:deps": "depcruise src",
+    "analyze:circular": "madge --circular src"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@storybook/react-vite": "^8.4.7",
+    "jsdom": "^25.0.1",
+    "msw": "^2.6.8",
+    "storybook": "^8.4.7",
+    "vitest": "^2.1.8"
+  }
+}

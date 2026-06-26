@@ -1,0 +1,37 @@
+{
+  "name": "visual-design",
+  "description": "Visual asset folders, font and license policy, export checks, and design documentation pack",
+  "boundary": {
+    "owns": [
+      "Visual source assets, export folders, fonts, and licensing notes",
+      "Design asset validation and export workflow",
+      "Brand, illustration, image, and media source organization",
+      "Asset provenance and usage constraints"
+    ],
+    "doesNotOwn": [
+      "Implemented UI behavior or component state logic",
+      "Backend API contracts",
+      "Infrastructure and secret management",
+      "Low-level shader/runtime implementation"
+    ],
+    "handoffs": [
+      "Publishes approved exports to frontend and 3D graphics",
+      "Publishes brand and visual constraints to UI/UX",
+      "Records license constraints that affect release packaging"
+    ],
+    "interfaces": [
+      "assets/design/source/",
+      "assets/design/exports/",
+      "assets/fonts/",
+      "docs/visual-design.md"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

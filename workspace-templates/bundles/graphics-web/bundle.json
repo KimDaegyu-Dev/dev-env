@@ -1,0 +1,19 @@
+{
+  "name": "graphics-web",
+  "description": "Three.js, WebGPU-oriented assets, GSAP, and browser visual-check bundle",
+  "includes": [
+    "Three.js and types",
+    "GSAP",
+    "Playwright visual check script",
+    "Asset validation script placeholder"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".gitignore": "appendUnique"
+  },
+  "scripts": {
+    "3d:assets": "node scripts/check-assets.mjs",
+    "3d:visual": "playwright test --project=chromium"
+  }
+}

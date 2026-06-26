@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "design: check assets",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} design:check",
+      "problemMatcher": []
+    }
+  ]
+}

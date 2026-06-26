@@ -1,0 +1,28 @@
+{
+  "name": "{{projectName}}",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "bun@1.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"No dev target configured yet\"",
+    "build": "echo \"No build target configured yet\"",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run test",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"No tests configured yet\"",
+    "test:e2e": "echo \"No e2e tests configured yet\"",
+    "analyze:dead": "knip",
+    "analyze:deps": "depcruise .",
+    "analyze:circular": "madge --circular ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "dependency-cruiser": "^16.10.4",
+    "knip": "^5.41.1",
+    "madge": "^8.0.0",
+    "typescript": "^5.7.2"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "harness-core",
+  "description": "Single-agent operating harness for resumable task packages, verification evidence, and human handoff",
+  "includes": [
+    "Agent start map and resume contract",
+    "feature_list.json as feature status SSOT",
+    "Task package folders with task.yaml, EXEC_PLAN.md, and RESULTS.md",
+    "agent-status, init, verify, and harness-doctor scripts",
+    "Human handoff and golden evaluation skeletons"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    "AGENTS.md": "replace",
+    "package.json": "deep",
+    "feature_list.json": "replace",
+    "docs/00-project-map.md": "replace",
+    "docs/01-current-state.md": "replace",
+    "docs/policies/tool-permissions.md": "replace",
+    "docs/learning/candidates.md": "replace",
+    "scripts/init.sh": "replace",
+    "scripts/agent-status.sh": "replace",
+    "scripts/verify.sh": "replace",
+    "scripts/harness-doctor.sh": "replace"
+  },
+  "scripts": {
+    "agent:status": "./scripts/agent-status.sh",
+    "verify:fast": "./scripts/verify.sh fast",
+    "verify:full": "./scripts/verify.sh full",
+    "harness:doctor": "./scripts/harness-doctor.sh"
+  }
+}

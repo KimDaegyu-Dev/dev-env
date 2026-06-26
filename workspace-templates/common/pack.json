@@ -1,0 +1,12 @@
+{
+  "name": "common",
+  "description": "Base workspace files shared by every generated project",
+  "files": ["**/*", ".**/*"],
+  "merge": {
+    ".env.example": "appendUnique",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/settings.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

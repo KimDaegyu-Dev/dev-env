@@ -1,0 +1,6 @@
+{
+  "name": "design-system",
+  "description": "UI/UX and visual design system workspace",
+  "packs": ["frontend", "ui-ux", "visual-design"],
+  "bundles": ["react-tanstack", "frontend-quality", "design-system"]
+}

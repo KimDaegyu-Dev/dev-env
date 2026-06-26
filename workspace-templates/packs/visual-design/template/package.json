@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "design:check": "node scripts/check-design-assets.mjs",
+    "assets:export": "echo \"Add design export automation\""
+  }
+}

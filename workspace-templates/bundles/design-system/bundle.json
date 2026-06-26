@@ -1,0 +1,20 @@
+{
+  "name": "design-system",
+  "description": "Design-token, Storybook, Figma handoff, accessibility, and visual asset workflow bundle",
+  "includes": [
+    "Design token validation",
+    "Storybook dependency baseline",
+    "Figma handoff docs",
+    "Visual asset and font folders"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  },
+  "scripts": {
+    "ui:tokens": "node scripts/check-design-tokens.mjs",
+    "design:check": "node scripts/check-design-assets.mjs"
+  }
+}

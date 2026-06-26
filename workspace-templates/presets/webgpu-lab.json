@@ -1,0 +1,6 @@
+{
+  "name": "webgpu-lab",
+  "description": "Browser 3D and WebGPU lab workspace",
+  "packs": ["frontend", "3d-graphics", "ui-ux"],
+  "bundles": ["react-tanstack", "frontend-quality", "graphics-web"]
+}

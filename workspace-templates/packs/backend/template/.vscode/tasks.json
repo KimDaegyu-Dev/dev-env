@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "backend: dev",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} dev",
+      "problemMatcher": []
+    },
+    {
+      "label": "backend: migrate",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} db:migrate",
+      "problemMatcher": []
+    }
+  ]
+}

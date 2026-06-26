@@ -1,0 +1,19 @@
+{
+  "name": "rust-vulkan",
+  "description": "Rust Vulkan bundle with ash, thiserror, insta, shader compile script, and Cargo checks",
+  "includes": [
+    "ash for Vulkan bindings",
+    "thiserror for error modeling",
+    "insta for snapshot-style test support",
+    "Slang/glslc shader compile script"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    ".gitignore": "appendUnique",
+    ".vscode/tasks.json": "appendTasks"
+  },
+  "scripts": {
+    "graphics:check": "cargo check",
+    "graphics:shaders": "bash scripts/compile-shaders.sh"
+  }
+}

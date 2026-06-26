@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "ui: token check",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} tokens:check",
+      "problemMatcher": []
+    },
+    {
+      "label": "ui: a11y check",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} a11y:check",
+      "problemMatcher": []
+    }
+  ]
+}

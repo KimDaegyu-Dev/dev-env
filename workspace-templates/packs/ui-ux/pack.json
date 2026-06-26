@@ -1,0 +1,36 @@
+{
+  "name": "ui-ux",
+  "description": "Design tokens, Storybook states, accessibility, and Figma handoff pack",
+  "boundary": {
+    "owns": [
+      "Interaction requirements, component states, and accessibility checklist",
+      "Design token source of truth for implementation",
+      "Figma handoff notes and UI review criteria",
+      "Storybook state coverage expectations"
+    ],
+    "doesNotOwn": [
+      "Production frontend route implementation",
+      "Backend API behavior",
+      "Infrastructure deployment",
+      "Raw visual source files and licensing records"
+    ],
+    "handoffs": [
+      "Publishes tokens and component states to frontend",
+      "Consumes visual-design brand and asset direction",
+      "Feeds accessibility requirements into E2E and Storybook checks"
+    ],
+    "interfaces": [
+      "tokens/design-tokens.json",
+      "docs/ui-ux.md",
+      "tokens:check and a11y:check scripts",
+      "Figma frame and component links"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

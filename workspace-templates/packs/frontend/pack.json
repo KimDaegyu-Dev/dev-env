@@ -1,0 +1,46 @@
+{
+  "name": "frontend",
+  "description": "React, Vite, TanStack, Storybook, Playwright, Tailwind frontend workspace pack",
+  "boundary": {
+    "owns": [
+      "Browser application shell and client-side composition",
+      "Route/view structure and frontend state boundaries",
+      "Frontend build, preview, E2E, and mock-service workflow",
+      "Client-side API consumption contracts"
+    ],
+    "doesNotOwn": [
+      "Server-side business rules or persistence schema",
+      "Terraform, deployment topology, or secret storage",
+      "Design source files, brand assets, or final visual exports",
+      "Native shell permissions outside explicit Tauri handoff"
+    ],
+    "handoffs": [
+      "Consumes backend API contracts and environment variables",
+      "Consumes UI/UX tokens and component state requirements",
+      "Produces screenshots, Storybook states, and E2E flows for review"
+    ],
+    "interfaces": [
+      "src/ application entrypoints",
+      "VITE_* environment variables",
+      "Storybook stories",
+      "Playwright user journeys"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".env.example": "appendUnique",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/settings.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vitest run",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit"
+  }
+}

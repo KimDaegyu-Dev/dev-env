@@ -1,0 +1,36 @@
+{
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/dist": true,
+        "**/build": true,
+        "**/out": true,
+        "**/target": true,
+        "**/.git": true,
+        "**/.next": true,
+        "**/.venv": true,
+        "**/coverage": true
+    },
+    "files.watcherExclude": {
+        "**/node_modules/**": true,
+        "**/dist/**": true,
+        "**/build/**": true,
+        "**/out/**": true,
+        "**/target/**": true,
+        "**/.git/**": true,
+        "**/.next/**": true,
+        "**/.venv/**": true,
+        "**/coverage/**": true
+    },
+    "git.autofetch": true,
+    "git.confirmSync": true,
+    "task.allowAutomaticTasks": "off"
+}

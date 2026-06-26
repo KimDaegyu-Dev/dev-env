@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "tokens:check": "node scripts/check-design-tokens.mjs",
+    "design:check": "node scripts/check-design-assets.mjs"
+  },
+  "devDependencies": {
+    "storybook": "^8.4.7"
+  }
+}

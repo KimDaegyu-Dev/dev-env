@@ -1,0 +1,10 @@
+{
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.cargo.features": "all",
+  "files.associations": {
+    "*.slang": "hlsl",
+    "*.vert": "glsl",
+    "*.frag": "glsl",
+    "*.comp": "glsl"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "fullstack-web",
+  "description": "Frontend, backend, infrastructure, and UI/UX workspace",
+  "packs": ["frontend", "backend", "infra", "ui-ux"],
+  "bundles": ["react-tanstack", "frontend-quality", "backend-nest"]
+}

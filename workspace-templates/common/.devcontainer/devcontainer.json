@@ -1,0 +1,16 @@
+{
+  "name": "{{projectName}}",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "EditorConfig.EditorConfig"
+      ]
+    }
+  },
+  "postCreateCommand": "{{runtimeInstallCommand}}",
+  "remoteUser": "node"
+}

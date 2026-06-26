@@ -1,0 +1,6 @@
+{
+  "name": "tauri-app",
+  "description": "Tauri application shell with frontend and UI workflow",
+  "packs": ["frontend", "ui-ux", "tauri"],
+  "bundles": ["react-tanstack", "frontend-quality"]
+}

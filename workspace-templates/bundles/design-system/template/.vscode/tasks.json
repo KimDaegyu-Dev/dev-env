@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "design-system: token check",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} tokens:check",
+      "problemMatcher": []
+    },
+    {
+      "label": "design-system: asset check",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} design:check",
+      "problemMatcher": []
+    }
+  ]
+}

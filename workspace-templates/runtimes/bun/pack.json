@@ -1,0 +1,13 @@
+{
+  "name": "bun",
+  "description": "Bun workspace runtime profile",
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep"
+  },
+  "scripts": {
+    "install": "bun install",
+    "dev": "bun run dev",
+    "commandPrefix": "bun run"
+  }
+}

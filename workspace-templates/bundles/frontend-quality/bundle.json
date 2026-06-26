@@ -1,0 +1,23 @@
+{
+  "name": "frontend-quality",
+  "description": "Frontend quality bundle with Vitest, MSW, Storybook, Playwright, dependency analysis, and dead-code checks",
+  "includes": [
+    "Vitest and jsdom",
+    "MSW for browser and API mocks",
+    "Storybook for component states",
+    "Playwright for E2E and visual checks",
+    "knip, dependency-cruiser, and madge analysis commands"
+  ],
+  "files": ["template/**"],
+  "merge": {
+    "package.json": "deep",
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "storybook": "storybook dev -p 6006"
+  }
+}

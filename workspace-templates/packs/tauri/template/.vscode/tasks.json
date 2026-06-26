@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tauri: dev",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} tauri:dev",
+      "problemMatcher": []
+    },
+    {
+      "label": "tauri: build",
+      "type": "shell",
+      "command": "{{runtimeCommandPrefix}} tauri:build",
+      "problemMatcher": []
+    }
+  ]
+}

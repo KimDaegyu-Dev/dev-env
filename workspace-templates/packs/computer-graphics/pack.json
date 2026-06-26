@@ -1,0 +1,37 @@
+{
+  "name": "computer-graphics",
+  "description": "Rust, Vulkan, ash, Slang, and shader workflow pack",
+  "boundary": {
+    "owns": [
+      "Low-level graphics runtime experiments",
+      "Rust/Vulkan project skeleton and Cargo checks",
+      "Shader source, compilation scripts, and capture-output policy",
+      "GPU debugging workflow notes"
+    ],
+    "doesNotOwn": [
+      "Browser UI composition unless paired through 3D graphics handoff",
+      "Application backend APIs or persistence",
+      "Cloud infrastructure",
+      "Brand/design source asset ownership"
+    ],
+    "handoffs": [
+      "Shares generated render outputs or asset requirements with 3D graphics",
+      "Consumes visual-design source assets when used in rendering",
+      "Publishes shader compile and capture instructions"
+    ],
+    "interfaces": [
+      "Cargo.toml",
+      "assets/shaders/",
+      "scripts/compile-shaders.sh",
+      "captures/ ignore policy"
+    ]
+  },
+  "dependsOn": ["common"],
+  "files": ["template/**"],
+  "merge": {
+    ".gitignore": "appendUnique",
+    ".vscode/extensions.json": "deep",
+    ".vscode/settings.json": "deep",
+    ".vscode/tasks.json": "appendTasks"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "infra-service",
+  "description": "Backend service with Terraform and deployment workflow",
+  "packs": ["backend", "infra"],
+  "bundles": ["backend-nest"]
+}

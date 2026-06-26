@@ -1,0 +1,22 @@
+id: FEAT-001
+status: planned
+owner: agent
+goal: Replace this sample task with the first real feature or bug fix.
+
+non_goals:
+  - Changing unrelated template structure
+  - Weakening acceptance criteria to pass checks
+
+risk: low
+
+acceptance:
+  - A concrete task contract exists.
+  - Fast verification evidence is recorded in RESULTS.md.
+  - feature_list.json points to this task package.
+
+human_gate:
+  required: false
+  reason: null
+
+rollback:
+  - Revert the task commit or restore the prior implementation.

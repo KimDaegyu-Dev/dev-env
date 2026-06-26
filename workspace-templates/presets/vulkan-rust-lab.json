@@ -1,0 +1,6 @@
+{
+  "name": "vulkan-rust-lab",
+  "description": "Rust Vulkan and shader workflow lab",
+  "packs": ["computer-graphics"],
+  "bundles": ["rust-vulkan"]
+}

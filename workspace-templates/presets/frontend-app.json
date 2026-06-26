@@ -1,0 +1,6 @@
+{
+  "name": "frontend-app",
+  "description": "React/Vite frontend application with UI workflow support",
+  "packs": ["frontend", "ui-ux"],
+  "bundles": ["react-tanstack", "frontend-quality"]
+}
