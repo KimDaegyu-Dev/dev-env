@@ -11,8 +11,6 @@
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "figma.figma-vscode-extension",
-    "github.copilot",
-    "github.copilot-chat",
     "github.vscode-github-actions",
     "hashicorp.terraform",
     "mechatroner.rainbow-csv",

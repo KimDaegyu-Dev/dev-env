@@ -2,12 +2,12 @@
 tap "homebrew/bundle"
 
 # Core CLI
-# brew "git"
+brew "git"
 # brew "gh"
-# brew "curl"
+brew "curl"
 # brew "wget"
 # brew "jq"
-# brew "ripgrep"
+brew "ripgrep"
 # brew "fd"
 # brew "fzf"
 # brew "tree"
@@ -15,7 +15,8 @@ tap "homebrew/bundle"
 # brew "eza"
 # brew "zoxide"
 # brew "starship"
-# brew "tmux"
+brew "tmux"
+brew "direnv"
 
 # Development
 # brew "node"

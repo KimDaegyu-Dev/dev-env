@@ -10,9 +10,10 @@
 # =============================================================================
 # Development
 # =============================================================================
-
 cask "anaconda"
 
+brew "anomalyco/tap/opencode"
+cask "opencode-desktop"
 # windsurf -> devin-desktop으로 변경
 cask "devin-desktop"
 cask "codex"
