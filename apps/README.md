@@ -40,14 +40,56 @@ mas install 497799835
 sudo xcodebuild -license accept
 ```
 
-# Window
+# Windows
 
-winget은 설치된 앱 목록을 JSON으로 export하고, 그 JSON을 import해서 batch install할 수 있습니다.
+관리자 PowerShell에서 WinGet 앱, WSL 2 + Ubuntu, WSL CLI 도구를 한 번에 설치합니다.
+기본 프로필에는 PowerToys와 Windows Terminal이 포함됩니다.
 
-winget export
-winget export -o apps/windows/winget.json
-winget import
-winget import -i apps/windows/winget.json --accept-package-agreements --accept-source-agreements
+```powershell
+# 기본 앱 + WSL
+.\apps\windows\install.ps1
+
+# 기본 앱에 개발 프로필 추가
+.\apps\windows\install.ps1 -Profile develop
+
+# 모든 프로필 설치
+.\apps\windows\install.ps1 -Profile all
+
+# 여러 프로필 선택
+.\apps\windows\install.ps1 -Profile ai,develop
+```
+
+프로필 구성:
+
+- `base`: CLI 도구, Chrome, PowerToys, Windows Terminal, 생산성/네트워크 앱
+- `ai`: Anaconda, opencode, Codex, Kiro, Claude, Cursor
+- `develop`: VS Code, GitHub Desktop, Neovim, FFmpeg, Terraform, Bun, Docker, Postman
+- `design`: Blender, Figma, Adobe Creative Cloud
+
+WSL 설치 후 재부팅이 필요하면 Windows를 재시작한 뒤 패키지 설치를 건너뛰고 이어서 실행합니다.
+
+```powershell
+.\apps\windows\install.ps1 -SkipPackages
+```
+
+선택 옵션:
+
+```powershell
+# WinGet 앱만 설치
+.\apps\windows\install.ps1 -Profile all -SkipWsl
+
+# WSL은 설치하지만 WSL 내부 apt 패키지는 생략
+.\apps\windows\install.ps1 -SkipWslTools
+
+# Ubuntu 대신 다른 배포판 사용
+.\apps\windows\install.ps1 -Distribution Debian
+```
+
+현재 Windows 앱 목록을 다시 내보낼 때:
+
+```powershell
+winget export --output apps/windows/winget.exported.json
+```
 
 ## Manual
 
