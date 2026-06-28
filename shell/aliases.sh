@@ -1,0 +1,6 @@
+alias g='git'
+alias gs='git status --short --branch'
+alias gl='git log --oneline --decorate -20'
+alias ll='ls -lah'
+alias devdoctor='dev-env doctor'
+alias devdash='dev-env dashboard'

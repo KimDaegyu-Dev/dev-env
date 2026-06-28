@@ -1,0 +1,11 @@
+set nocompatible
+set number
+set relativenumber
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set ignorecase
+set smartcase
+set hidden
+set mouse=a
+syntax on
