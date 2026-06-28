@@ -35,7 +35,13 @@
   },
   "impl block": {
     "prefix": "impl",
-    "body": ["impl ${1:Type} {", "    pub fn new(${2}) -> Self {", "        Self { ${3} }", "    }", "}"],
+    "body": [
+      "impl ${1:Type} {",
+      "    pub fn new(${2}) -> Self {",
+      "        Self { ${3} }",
+      "    }",
+      "}"
+    ],
     "description": "Rust impl block"
   },
   "tokio main": {

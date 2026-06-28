@@ -18,11 +18,7 @@
       "Publishes platform permissions and native capability constraints",
       "Depends on Rust tooling for shell code"
     ],
-    "interfaces": [
-      "src-tauri/",
-      "tauri:dev and tauri:build scripts",
-      "platform capability docs"
-    ]
+    "interfaces": ["src-tauri/", "tauri:dev and tauri:build scripts", "platform capability docs"]
   },
   "dependsOn": ["common", "frontend"],
   "files": ["template/**"],

@@ -13,8 +13,5 @@
     "twxs.cmake",
     "vadimcn.vscode-lldb"
   ],
-  "reviewNeeded": [
-    "ms-vscode.cpptools",
-    "ms-vscode.hexeditor"
-  ]
+  "reviewNeeded": ["ms-vscode.cpptools", "ms-vscode.hexeditor"]
 }

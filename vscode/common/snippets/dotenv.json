@@ -1,7 +1,11 @@
 {
   "env example": {
     "prefix": "envexample",
-    "body": ["# Copy this file to .env and fill local values.", "${1:SERVICE_URL}=https://example.local", "${2:API_KEY}=replace-with-local-value"],
+    "body": [
+      "# Copy this file to .env and fill local values.",
+      "${1:SERVICE_URL}=https://example.local",
+      "${2:API_KEY}=replace-with-local-value"
+    ],
     "description": "Safe .env.example template"
   }
 }

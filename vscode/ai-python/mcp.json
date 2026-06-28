@@ -4,11 +4,5 @@
     "autostart": "never",
     "note": "AI/Python is the main profile for MCP experiments. Keep each server explicit."
   },
-  "_candidates": [
-    "filesystem",
-    "github",
-    "python",
-    "notebook",
-    "data"
-  ]
+  "_candidates": ["filesystem", "github", "python", "notebook", "data"]
 }

@@ -1,11 +1,7 @@
 {
   "Async function": {
     "prefix": "afn",
-    "body": [
-      "export async function ${1:name}(${2}) {",
-      "  ${3:return undefined;}",
-      "}"
-    ],
+    "body": ["export async function ${1:name}(${2}) {", "  ${3:return undefined;}", "}"],
     "description": "Exported async function"
   },
   "Typed fetch": {

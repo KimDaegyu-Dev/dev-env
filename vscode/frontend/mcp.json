@@ -4,8 +4,5 @@
     "autostart": "never",
     "note": "Keep frontend MCP minimal. Prefer enabling browser/devtools only for a specific project."
   },
-  "_candidates": [
-    "browser",
-    "figma"
-  ]
+  "_candidates": ["browser", "figma"]
 }

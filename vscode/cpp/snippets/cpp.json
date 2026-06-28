@@ -1,12 +1,28 @@
 {
   "main": {
     "prefix": "main",
-    "body": ["#include <iostream>", "", "int main() {", "    ${1:std::cout << \"Hello, world!\\n\";}", "    return 0;", "}"],
+    "body": [
+      "#include <iostream>",
+      "",
+      "int main() {",
+      "    ${1:std::cout << \"Hello, world!\\n\";}",
+      "    return 0;",
+      "}"
+    ],
     "description": "C++ main function"
   },
   "class": {
     "prefix": "class",
-    "body": ["class ${1:Name} {", "public:", "    ${1:Name}() = default;", "    ~${1:Name}() = default;", "", "private:", "    ${2:// members}", "};"],
+    "body": [
+      "class ${1:Name} {",
+      "public:",
+      "    ${1:Name}() = default;",
+      "    ~${1:Name}() = default;",
+      "",
+      "private:",
+      "    ${2:// members}",
+      "};"
+    ],
     "description": "C++ class skeleton"
   },
   "struct": {
@@ -35,7 +51,13 @@
   },
   "test": {
     "prefix": "gtest",
-    "body": ["#include <gtest/gtest.h>", "", "TEST(${1:Suite}, ${2:Case}) {", "    ${3:EXPECT_TRUE(true);}", "}"],
+    "body": [
+      "#include <gtest/gtest.h>",
+      "",
+      "TEST(${1:Suite}, ${2:Case}) {",
+      "    ${3:EXPECT_TRUE(true);}",
+      "}"
+    ],
     "description": "GoogleTest test"
   }
 }

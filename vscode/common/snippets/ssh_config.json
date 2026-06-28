@@ -1,7 +1,12 @@
 {
   "ssh host": {
     "prefix": "sshhost",
-    "body": ["Host ${1:alias}", "  HostName ${2:example.com}", "  User ${3:user}", "  IdentityFile ${4:~/.ssh/id_ed25519}"],
+    "body": [
+      "Host ${1:alias}",
+      "  HostName ${2:example.com}",
+      "  User ${3:user}",
+      "  IdentityFile ${4:~/.ssh/id_ed25519}"
+    ],
     "description": "SSH config host entry"
   }
 }

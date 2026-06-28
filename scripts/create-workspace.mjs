@@ -382,7 +382,10 @@ function appendUnique(existing, incoming) {
     }
   }
 
-  return lines.join("\n").replace(/\n{3,}/g, "\n\n").trimEnd() + "\n";
+  return `${lines
+    .join("\n")
+    .replace(/\n{3,}/g, "\n\n")
+    .trimEnd()}\n`;
 }
 
 function mergeContent(rule, existing, incoming) {
@@ -498,12 +501,12 @@ function finalizePackageJson(planned, context) {
 
   if (has("ui-ux")) {
     setScript(scripts, "ui:tokens", "node scripts/check-design-tokens.mjs");
-    setScript(scripts, "ui:a11y", "echo \"Add axe or Playwright accessibility checks\"");
+    setScript(scripts, "ui:a11y", 'echo "Add axe or Playwright accessibility checks"');
   }
 
   if (has("visual-design")) {
     setScript(scripts, "design:check", "node scripts/check-design-assets.mjs");
-    setScript(scripts, "design:export", "echo \"Add design export automation\"");
+    setScript(scripts, "design:export", 'echo "Add design export automation"');
   }
 
   if (has("tauri")) {
@@ -512,7 +515,7 @@ function finalizePackageJson(planned, context) {
   }
 
   if (has("frontend") && has("backend")) {
-    setScript(scripts, "dev", "echo \"Run frontend:dev and backend:dev in separate terminals\"");
+    setScript(scripts, "dev", 'echo "Run frontend:dev and backend:dev in separate terminals"');
     setScript(scripts, "build", `${run} frontend:build && ${run} backend:build`);
     setScript(scripts, "test", `${run} frontend:test && ${run} backend:test`);
   } else if (has("tauri")) {
@@ -527,7 +530,7 @@ function finalizePackageJson(planned, context) {
     setScript(scripts, "build", `${run} backend:build`);
     setScript(scripts, "test", `${run} backend:test`);
   } else if (has("computer-graphics")) {
-    setScript(scripts, "dev", "echo \"Run graphics:check, graphics:build, or graphics:shaders\"");
+    setScript(scripts, "dev", 'echo "Run graphics:check, graphics:build, or graphics:shaders"');
     setScript(scripts, "build", "cargo build");
     setScript(scripts, "typecheck", "cargo check");
     setScript(scripts, "test", "cargo test");
@@ -545,7 +548,7 @@ function formatList(items) {
     return "- None.\n";
   }
 
-  return items.map((item) => `- ${item}`).join("\n") + "\n";
+  return `${items.map((item) => `- ${item}`).join("\n")}\n`;
 }
 
 function buildBoundariesDoc(packs, context) {
@@ -736,7 +739,9 @@ function main() {
     runtimeCommandPrefix: runtime.scripts?.commandPrefix ?? args.runtime,
   };
 
-  const outputDir = path.resolve(args.output ?? args["out-dir"] ?? path.join(process.cwd(), projectName));
+  const outputDir = path.resolve(
+    args.output ?? args["out-dir"] ?? path.join(process.cwd(), projectName),
+  );
   const { planned, operations } = collectFiles(packs, context);
   finalizePackageJson(planned, context);
   addGeneratedDocs(planned, resolvedPacks, bundles, context);
@@ -748,7 +753,9 @@ function main() {
   console.log(`Output:  ${outputDir}`);
   console.log(`Runtime: ${args.runtime}`);
   console.log(`Packs:   ${resolvedPacks.map((pack) => pack.id).join(", ")}`);
-  console.log(`Bundles: ${bundles.length > 0 ? bundles.map((bundle) => bundle.name).join(", ") : "none"}`);
+  console.log(
+    `Bundles: ${bundles.length > 0 ? bundles.map((bundle) => bundle.name).join(", ") : "none"}`,
+  );
   console.log(`Harness: ${harnessEnabled ? "enabled" : "disabled"}`);
   console.log(`Files:   ${planned.size}`);
   console.log("");

@@ -1,12 +1,27 @@
 {
   "main class": {
     "prefix": "main",
-    "body": ["public class ${1:Main} {", "    public static void main(String[] args) {", "        ${2:System.out.println(\"Hello, world!\");}", "    }", "}"],
+    "body": [
+      "public class ${1:Main} {",
+      "    public static void main(String[] args) {",
+      "        ${2:System.out.println(\"Hello, world!\");}",
+      "    }",
+      "}"
+    ],
     "description": "Java main class"
   },
   "junit test": {
     "prefix": "jtest",
-    "body": ["import org.junit.jupiter.api.Test;", "", "class ${1:Name}Test {", "    @Test", "    void ${2:testName}() {", "        ${3:// assertions}", "    }", "}"],
+    "body": [
+      "import org.junit.jupiter.api.Test;",
+      "",
+      "class ${1:Name}Test {",
+      "    @Test",
+      "    void ${2:testName}() {",
+      "        ${3:// assertions}",
+      "    }",
+      "}"
+    ],
     "description": "JUnit 5 test"
   }
 }

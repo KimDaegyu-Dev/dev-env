@@ -1,7 +1,14 @@
 {
   "main guard": {
     "prefix": "main",
-    "body": ["def main() -> None:", "    ${1:pass}", "", "", "if __name__ == \"__main__\":", "    main()"],
+    "body": [
+      "def main() -> None:",
+      "    ${1:pass}",
+      "",
+      "",
+      "if __name__ == \"__main__\":",
+      "    main()"
+    ],
     "description": "Python main guard"
   },
   "argparse": {
@@ -24,17 +31,35 @@
   },
   "dataclass": {
     "prefix": "dataclass",
-    "body": ["from dataclasses import dataclass", "", "", "@dataclass(frozen=True)", "class ${1:Name}:", "    ${2:value}: ${3:str}"],
+    "body": [
+      "from dataclasses import dataclass",
+      "",
+      "",
+      "@dataclass(frozen=True)",
+      "class ${1:Name}:",
+      "    ${2:value}: ${3:str}"
+    ],
     "description": "Frozen dataclass"
   },
   "pydantic model": {
     "prefix": "pmodel",
-    "body": ["from pydantic import BaseModel", "", "", "class ${1:ModelName}(BaseModel):", "    ${2:value}: ${3:str}"],
+    "body": [
+      "from pydantic import BaseModel",
+      "",
+      "",
+      "class ${1:ModelName}(BaseModel):",
+      "    ${2:value}: ${3:str}"
+    ],
     "description": "Pydantic BaseModel"
   },
   "pathlib read text": {
     "prefix": "pread",
-    "body": ["from pathlib import Path", "", "${1:path} = Path(${2:\"data/input.txt\"})", "${3:text} = ${1:path}.read_text(encoding=\"utf-8\")"],
+    "body": [
+      "from pathlib import Path",
+      "",
+      "${1:path} = Path(${2:\"data/input.txt\"})",
+      "${3:text} = ${1:path}.read_text(encoding=\"utf-8\")"
+    ],
     "description": "Read text with pathlib"
   }
 }

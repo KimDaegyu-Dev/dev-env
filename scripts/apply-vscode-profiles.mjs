@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
@@ -10,6 +11,23 @@ const __dirname = path.dirname(__filename);
 
 const rootDir = path.resolve(__dirname, "..");
 const vscodeDir = path.join(rootDir, "vscode");
+
+function stateRoot() {
+  if (process.env.DEV_ENV_STATE_HOME) return path.resolve(process.env.DEV_ENV_STATE_HOME);
+  if (process.platform === "darwin") {
+    return path.join(os.homedir(), "Library", "Application Support", "dev-env");
+  }
+  if (process.platform === "win32") {
+    return path.join(
+      process.env.LOCALAPPDATA ?? path.join(os.homedir(), "AppData", "Local"),
+      "dev-env",
+    );
+  }
+  return path.join(
+    process.env.XDG_STATE_HOME ?? path.join(os.homedir(), ".local", "state"),
+    "dev-env",
+  );
+}
 
 const profiles = {
   frontend: "Frontend",
@@ -52,12 +70,8 @@ function readJson(filePath) {
     const parsed = JSON.parse(raw);
 
     return {
-      recommendations: Array.isArray(parsed.recommendations)
-        ? parsed.recommendations
-        : [],
-      reviewNeeded: Array.isArray(parsed.reviewNeeded)
-        ? parsed.reviewNeeded
-        : [],
+      recommendations: Array.isArray(parsed.recommendations) ? parsed.recommendations : [],
+      reviewNeeded: Array.isArray(parsed.reviewNeeded) ? parsed.reviewNeeded : [],
     };
   } catch (error) {
     throw new Error(`Invalid JSON: ${filePath}\n${error.message}`);
@@ -80,12 +94,7 @@ function ensureCodeCli() {
 }
 
 function createProfileIfNeeded(profileName) {
-  const scratchDir = path.join(
-    rootDir,
-    ".tmp",
-    "vscode-profile-bootstrap",
-    profileName,
-  );
+  const scratchDir = path.join(stateRoot(), "cache", "vscode-profile-bootstrap", profileName);
 
   fs.mkdirSync(scratchDir, { recursive: true });
 
@@ -104,13 +113,7 @@ function installExtension(profileName, extensionId) {
   }
 
   console.log(`  + ${extensionId}`);
-  run("code", [
-    "--install-extension",
-    extensionId,
-    "--profile",
-    profileName,
-    "--force",
-  ]);
+  run("code", ["--install-extension", extensionId, "--profile", profileName, "--force"]);
 }
 
 function installExtensionsFromJson(profileName, filePath, label) {

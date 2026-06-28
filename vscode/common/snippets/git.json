@@ -1,7 +1,16 @@
 {
   "gitignore basics": {
     "prefix": "gignore",
-    "body": [".env", ".env.*", "!.env.example", "node_modules/", ".venv/", "target/", "build/", "dist/"],
+    "body": [
+      ".env",
+      ".env.*",
+      "!.env.example",
+      "node_modules/",
+      ".venv/",
+      "target/",
+      "build/",
+      "dist/"
+    ],
     "description": "Common gitignore entries"
   }
 }

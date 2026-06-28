@@ -10,11 +10,7 @@
   },
   "useEffect skeleton": {
     "prefix": "uef",
-    "body": [
-      "useEffect(() => {",
-      "  ${1:// effect}",
-      "}, [${2}]);"
-    ],
+    "body": ["useEffect(() => {", "  ${1:// effect}", "}, [${2}]);"],
     "description": "React useEffect"
   }
 }

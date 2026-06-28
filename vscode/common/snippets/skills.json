@@ -1,7 +1,13 @@
 {
   "skill note": {
     "prefix": "skill",
-    "body": ["# ${1:Skill Name}", "", "Use when: ${2:trigger}", "", "Do not use when: ${3:boundary}"],
+    "body": [
+      "# ${1:Skill Name}",
+      "",
+      "Use when: ${2:trigger}",
+      "",
+      "Do not use when: ${3:boundary}"
+    ],
     "description": "Skill note skeleton"
   }
 }

@@ -17,11 +17,7 @@
   "cmake.options.statusBarVisibility": "visible",
   "cmake.configureOnOpen": false,
   "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
-  "clangd.arguments": [
-    "--background-index",
-    "--clang-tidy",
-    "--completion-style=detailed"
-  ],
+  "clangd.arguments": ["--background-index", "--clang-tidy", "--completion-style=detailed"],
   "glsllint.glslangValidatorPath": "glslangValidator",
   "chat.mcp.autostart": "never",
   "chat.mcp.gallery.enabled": true,

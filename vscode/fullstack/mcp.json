@@ -4,11 +4,5 @@
     "autostart": "never",
     "note": "Fullstack can use more MCP servers, but they should still be enabled manually."
   },
-  "_candidates": [
-    "filesystem",
-    "github",
-    "browser",
-    "database",
-    "python"
-  ]
+  "_candidates": ["filesystem", "github", "browser", "database", "python"]
 }

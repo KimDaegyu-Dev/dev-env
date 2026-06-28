@@ -6,8 +6,5 @@
     "vadimcn.vscode-lldb",
     "twxs.cmake"
   ],
-  "reviewNeeded": [
-    "ms-vscode.cpptools",
-    "ms-vscode.cpptools-extension-pack"
-  ]
+  "reviewNeeded": ["ms-vscode.cpptools", "ms-vscode.cpptools-extension-pack"]
 }

@@ -5,8 +5,5 @@
     "vadimcn.vscode-lldb",
     "serayuzgur.crates"
   ],
-  "reviewNeeded": [
-    "fill-labs.dependi",
-    "swellaby.vscode-rust-test-adapter"
-  ]
+  "reviewNeeded": ["fill-labs.dependi", "swellaby.vscode-rust-test-adapter"]
 }

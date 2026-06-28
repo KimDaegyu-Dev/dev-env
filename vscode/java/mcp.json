@@ -4,8 +4,5 @@
     "autostart": "never",
     "note": "Java profile keeps MCP disabled by default."
   },
-  "_candidates": [
-    "filesystem",
-    "github"
-  ]
+  "_candidates": ["filesystem", "github"]
 }

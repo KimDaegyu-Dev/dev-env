@@ -13,6 +13,23 @@ const __dirname = path.dirname(__filename);
 // scripts/advanced/apply-vscode-profile-files.mjs 기준 repo root
 const DEFAULT_REPO_ROOT = path.resolve(__dirname, "..", "..");
 
+function devEnvStateRoot() {
+  if (process.env.DEV_ENV_STATE_HOME) return path.resolve(process.env.DEV_ENV_STATE_HOME);
+  if (process.platform === "darwin") {
+    return path.join(os.homedir(), "Library", "Application Support", "dev-env");
+  }
+  if (process.platform === "win32") {
+    return path.join(
+      process.env.LOCALAPPDATA ?? path.join(os.homedir(), "AppData", "Local"),
+      "dev-env",
+    );
+  }
+  return path.join(
+    process.env.XDG_STATE_HOME ?? path.join(os.homedir(), ".local", "state"),
+    "dev-env",
+  );
+}
+
 const PROFILE_ORDER = [
   "frontend",
   "rust",
@@ -35,12 +52,7 @@ const DEFAULT_PROFILE_NAMES = {
   java: "Java",
 };
 
-const PROFILE_FILES = [
-  "settings.json",
-  "keybindings.json",
-  "tasks.json",
-  "mcp.json",
-];
+const PROFILE_FILES = ["settings.json", "keybindings.json", "tasks.json", "mcp.json"];
 
 const RUN_TIMESTAMP = createTimestamp();
 
@@ -166,11 +178,7 @@ function detectVSCodeUserDir(app) {
 
   if (platform === "darwin") {
     const appDirName =
-      app === "insiders"
-        ? "Code - Insiders"
-        : app === "codium"
-          ? "VSCodium"
-          : "Code";
+      app === "insiders" ? "Code - Insiders" : app === "codium" ? "VSCodium" : "Code";
 
     return path.join(home, "Library", "Application Support", appDirName, "User");
   }
@@ -182,11 +190,7 @@ function detectVSCodeUserDir(app) {
     }
 
     const appDirName =
-      app === "insiders"
-        ? "Code - Insiders"
-        : app === "codium"
-          ? "VSCodium"
-          : "Code";
+      app === "insiders" ? "Code - Insiders" : app === "codium" ? "VSCodium" : "Code";
 
     return path.join(appData, appDirName, "User");
   }
@@ -222,7 +226,7 @@ function ensureCodeCli(app) {
   if (result.error || result.status !== 0) {
     fail(
       `'${command}' command not found. ` +
-      "VS Code에서 Cmd+Shift+P → Shell Command: Install 'code' command in PATH를 실행하세요.",
+        "VS Code에서 Cmd+Shift+P → Shell Command: Install 'code' command in PATH를 실행하세요.",
     );
   }
 
@@ -264,7 +268,7 @@ function deepMerge(base, override) {
     const result = { ...base };
 
     for (const [key, value] of Object.entries(override)) {
-      if (Object.prototype.hasOwnProperty.call(result, key)) {
+      if (Object.hasOwn(result, key)) {
         result[key] = deepMerge(result[key], value);
       } else {
         result[key] = value;
@@ -368,10 +372,10 @@ function createTimestamp() {
   return `${yyyy}${mm}${dd}-${hh}${mi}${ss}`;
 }
 
-function backupPath(repoRoot, slug, relativeName) {
+function backupPath(_repoRoot, slug, relativeName) {
   return path.join(
-    repoRoot,
-    ".backups",
+    devEnvStateRoot(),
+    "backups",
     "vscode-profiles",
     RUN_TIMESTAMP,
     slug,
@@ -501,13 +505,7 @@ function readExtensions(filePath) {
 }
 
 function runCodeInstall(codeCommand, profileName, extensionId, dryRun) {
-  const args = [
-    "--install-extension",
-    extensionId,
-    "--profile",
-    profileName,
-    "--force",
-  ];
+  const args = ["--install-extension", extensionId, "--profile", profileName, "--force"];
 
   if (dryRun) {
     log(`[dry-run] ${codeCommand} ${args.join(" ")}`);
@@ -522,7 +520,7 @@ function runCodeInstall(codeCommand, profileName, extensionId, dryRun) {
   if (result.error) {
     warn(
       `Failed to run '${codeCommand}' for extension '${extensionId}'. ` +
-      `VS Code CLI가 PATH에 있는지 확인하세요.\n${result.error.message}`,
+        `VS Code CLI가 PATH에 있는지 확인하세요.\n${result.error.message}`,
     );
     return false;
   }
@@ -530,7 +528,7 @@ function runCodeInstall(codeCommand, profileName, extensionId, dryRun) {
   if (result.status !== 0) {
     warn(
       `Failed to install extension '${extensionId}' for profile '${profileName}'. ` +
-      `Exit code: ${result.status}`,
+        `Exit code: ${result.status}`,
     );
     return false;
   }
@@ -550,17 +548,13 @@ function listInstalledExtensions(codeCommand, profileName, dryRun) {
   });
 
   if (result.error) {
-    warn(
-      `Failed to list extensions for profile '${profileName}'. ` +
-      `${result.error.message}`,
-    );
+    warn(`Failed to list extensions for profile '${profileName}'. ` + `${result.error.message}`);
     return [];
   }
 
   if (result.status !== 0) {
     warn(
-      `Failed to list extensions for profile '${profileName}'. ` +
-      `Exit code: ${result.status}`,
+      `Failed to list extensions for profile '${profileName}'. ` + `Exit code: ${result.status}`,
     );
     return [];
   }
@@ -572,12 +566,7 @@ function listInstalledExtensions(codeCommand, profileName, dryRun) {
 }
 
 function runCodeUninstall(codeCommand, profileName, extensionId, dryRun) {
-  const args = [
-    "--uninstall-extension",
-    extensionId,
-    "--profile",
-    profileName,
-  ];
+  const args = ["--uninstall-extension", extensionId, "--profile", profileName];
 
   if (dryRun) {
     log(`[dry-run] ${codeCommand} ${args.join(" ")}`);
@@ -591,8 +580,7 @@ function runCodeUninstall(codeCommand, profileName, extensionId, dryRun) {
 
   if (result.error) {
     warn(
-      `Failed to run '${codeCommand}' for uninstall '${extensionId}'. ` +
-      `${result.error.message}`,
+      `Failed to run '${codeCommand}' for uninstall '${extensionId}'. ` + `${result.error.message}`,
     );
     return false;
   }
@@ -600,7 +588,7 @@ function runCodeUninstall(codeCommand, profileName, extensionId, dryRun) {
   if (result.status !== 0) {
     warn(
       `Failed to uninstall extension '${extensionId}' from profile '${profileName}'. ` +
-      `Exit code: ${result.status}`,
+        `Exit code: ${result.status}`,
     );
     return false;
   }
@@ -678,14 +666,7 @@ function installExtensions({ vscodeDir, slug, profileName, codeCommand, dryRun }
   }
 }
 
-function syncExtensions({
-  vscodeDir,
-  slug,
-  profileName,
-  codeCommand,
-  dryRun,
-  pruneReviewNeeded,
-}) {
+function syncExtensions({ vscodeDir, slug, profileName, codeCommand, dryRun, pruneReviewNeeded }) {
   const policy = collectExtensionPolicy(vscodeDir, slug);
 
   const desired = new Set(policy.recommendations);
@@ -840,18 +821,12 @@ function sleepSync(ms) {
   }
 }
 
-function ensureProfileCreated({
-  profileName,
-  repoRoot,
-  vscodeUserDir,
-  codeCommand,
-  dryRun,
-}) {
+function ensureProfileCreated({ profileName, vscodeUserDir, codeCommand, dryRun }) {
   const before = listInternalProfileIds(vscodeUserDir);
 
   const scratchDir = path.join(
-    repoRoot,
-    ".tmp",
+    devEnvStateRoot(),
+    "cache",
     "vscode-profile-bootstrap",
     sanitizeFileName(profileName),
   );
@@ -864,14 +839,10 @@ function ensureProfileCreated({
 
   fs.mkdirSync(scratchDir, { recursive: true });
 
-  const result = spawnSync(
-    codeCommand,
-    [scratchDir, "--profile", profileName, "--new-window"],
-    {
-      stdio: "ignore",
-      shell: false,
-    },
-  );
+  const result = spawnSync(codeCommand, [scratchDir, "--profile", profileName, "--new-window"], {
+    stdio: "ignore",
+    shell: false,
+  });
 
   if (result.error) {
     fail(
@@ -903,7 +874,6 @@ function resolveProfileId({
   profileMap,
   vscodeDir,
   slug,
-  repoRoot,
   vscodeUserDir,
   codeCommand,
   dryRun,
@@ -914,11 +884,7 @@ function resolveProfileId({
 
   let profileId = entry.id;
 
-  if (
-    typeof profileId === "string" &&
-    profileId.length > 0 &&
-    profileId !== "TODO"
-  ) {
+  if (typeof profileId === "string" && profileId.length > 0 && profileId !== "TODO") {
     return {
       profileName,
       profileId,
@@ -928,7 +894,7 @@ function resolveProfileId({
   if (!createMissingProfiles) {
     fail(
       `Profile id missing for "${slug}" (${profileName}).\n` +
-      `vscode/profile-map.json에 id를 채우거나, --create-missing-profiles 옵션을 사용하세요.`,
+        `vscode/profile-map.json에 id를 채우거나, --create-missing-profiles 옵션을 사용하세요.`,
     );
   }
 
@@ -938,7 +904,6 @@ function resolveProfileId({
 
   const createdId = ensureProfileCreated({
     profileName,
-    repoRoot,
     vscodeUserDir,
     codeCommand,
     dryRun,
@@ -966,12 +931,12 @@ function resolveProfileId({
 
   fail(
     `Could not detect newly created profile id for "${profileName}".\n` +
-    `가능한 원인:\n` +
-    `1. 이미 VS Code 안에 "${profileName}" 프로필이 존재해서 새 폴더가 생성되지 않았습니다.\n` +
-    `2. VS Code가 profile 폴더 생성을 아직 flush하지 않았습니다.\n\n` +
-    `해결 방법:\n` +
-    `- VS Code에서 "${profileName}" 프로필로 전환한 뒤 Preferences: Open User Settings (JSON)의 경로를 확인하세요.\n` +
-    `- 그 경로의 profiles/<id>/settings.json 중 <id>를 vscode/profile-map.json에 직접 입력하세요.\n`,
+      `가능한 원인:\n` +
+      `1. 이미 VS Code 안에 "${profileName}" 프로필이 존재해서 새 폴더가 생성되지 않았습니다.\n` +
+      `2. VS Code가 profile 폴더 생성을 아직 flush하지 않았습니다.\n\n` +
+      `해결 방법:\n` +
+      `- VS Code에서 "${profileName}" 프로필로 전환한 뒤 Preferences: Open User Settings (JSON)의 경로를 확인하세요.\n` +
+      `- 그 경로의 profiles/<id>/settings.json 중 <id>를 vscode/profile-map.json에 직접 입력하세요.\n`,
   );
 }
 
@@ -992,7 +957,6 @@ function applyProfile({
     profileMap,
     vscodeDir,
     slug,
-    repoRoot,
     vscodeUserDir,
     codeCommand,
     dryRun,
@@ -1009,7 +973,7 @@ function applyProfile({
   if (!fs.existsSync(targetProfileDir) && !dryRun) {
     fail(
       `Target VS Code profile folder not found: ${targetProfileDir}\n` +
-      `VS Code에서 '${profileName}' 프로필이 존재하는지 확인하세요.`,
+        `VS Code에서 '${profileName}' 프로필이 존재하는지 확인하세요.`,
     );
   }
 
@@ -1134,7 +1098,7 @@ function createMapTemplate(vscodeDir, vscodeUserDir, dryRun) {
       "id가 TODO인 상태에서 --create-missing-profiles 옵션을 사용하면 스크립트가 새 프로필 생성을 시도하고 id를 자동 기록합니다.",
       "단, 이미 같은 이름의 프로필이 VS Code에 존재하면 새 폴더가 생성되지 않아 자동 감지가 실패할 수 있습니다.",
       "이 경우 VS Code에서 해당 프로필로 전환한 뒤 Preferences: Open User Settings (JSON)의 경로에서 profiles/<id>/settings.json의 <id>를 확인해 직접 입력하세요.",
-      "아래 _detectedProfileIds는 현재 발견된 내부 폴더 목록입니다."
+      "아래 _detectedProfileIds는 현재 발견된 내부 폴더 목록입니다.",
     ],
     _detectedProfileIds: detectedProfileIds,
   };
@@ -1228,7 +1192,9 @@ function main() {
 
   log("");
   log("Done.");
-  log("VS Code를 다시 실행해서 프로필별 settings/snippets/tasks/mcp/keybindings가 적용됐는지 확인하세요.");
+  log(
+    "VS Code를 다시 실행해서 프로필별 settings/snippets/tasks/mcp/keybindings가 적용됐는지 확인하세요.",
+  );
 }
 
 main();

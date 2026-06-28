@@ -1,7 +1,15 @@
 {
   "compose service": {
     "prefix": "compose",
-    "body": ["services:", "  ${1:app}:", "    build: .", "    ports:", "      - \"${2:3000}:3000\"", "    env_file:", "      - .env"],
+    "body": [
+      "services:",
+      "  ${1:app}:",
+      "    build: .",
+      "    ports:",
+      "      - \"${2:3000}:3000\"",
+      "    env_file:",
+      "      - .env"
+    ],
     "description": "Docker Compose service skeleton"
   }
 }

@@ -1,6 +1,3 @@
 {
-  "recommendations": [
-    "cesium.gltf-vscode",
-    "slevesque.shader"
-  ]
+  "recommendations": ["cesium.gltf-vscode", "slevesque.shader"]
 }

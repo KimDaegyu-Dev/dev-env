@@ -4,9 +4,5 @@
     "autostart": "never",
     "note": "Graphics profile should keep MCP narrow and project-specific."
   },
-  "_candidates": [
-    "filesystem",
-    "github",
-    "shader-build"
-  ]
+  "_candidates": ["filesystem", "github", "shader-build"]
 }
