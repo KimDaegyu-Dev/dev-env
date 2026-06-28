@@ -1,0 +1,44 @@
+schemaVersion: 1
+checks:
+  - id: prettier
+    command: pnpm
+    checkArgs: [format:check]
+    formatArgs: [format]
+    required: true
+  - id: typescript
+    command: pnpm
+    checkArgs: [typecheck]
+    required: true
+  - id: biome-lint
+    command: pnpm
+    checkArgs: [lint]
+    required: true
+  - id: tests
+    command: pnpm
+    checkArgs: [test]
+    required: true
+  - id: shellcheck
+    command: shellcheck
+    checkArgs:
+      [shell/.bashrc, shell/aliases.sh, shell/functions.sh, bootstrap.sh]
+    required: false
+  - id: shfmt
+    command: shfmt
+    checkArgs:
+      [-d, shell/.bashrc, shell/aliases.sh, shell/functions.sh, bootstrap.sh]
+    formatArgs:
+      [-w, shell/.bashrc, shell/aliases.sh, shell/functions.sh, bootstrap.sh]
+    required: false
+  - id: zsh-syntax
+    command: zsh
+    checkArgs: [-n, shell/.zshrc]
+    required: false
+  - id: powershell
+    command: pwsh
+    checkArgs:
+      [
+        -NoProfile,
+        -Command,
+        "Invoke-ScriptAnalyzer -Path bootstrap.ps1,shell/Microsoft.PowerShell_profile.ps1 -Severity Warning",
+      ]
+    required: false

@@ -1,0 +1,444 @@
+schemaVersion: 1
+packages:
+  - {
+      id: git,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: git },
+          windows: { manager: winget, id: Git.Git },
+          ubuntu: { manager: apt, id: git },
+        },
+    }
+  - {
+      id: gh,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: gh },
+          windows: { manager: winget, id: GitHub.cli },
+        },
+    }
+  - {
+      id: curl,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: curl },
+          windows: { manager: winget, id: cURL.cURL },
+          ubuntu: { manager: apt, id: curl },
+        },
+    }
+  - {
+      id: ripgrep,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: ripgrep },
+          windows: { manager: winget, id: BurntSushi.ripgrep.MSVC },
+          ubuntu: { manager: apt, id: ripgrep },
+        },
+    }
+  - {
+      id: jq,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: jq },
+          windows: { manager: winget, id: jqlang.jq },
+          ubuntu: { manager: apt, id: jq },
+        },
+    }
+  - {
+      id: fd,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: fd },
+          windows: { manager: winget, id: sharkdp.fd },
+          ubuntu: { manager: apt, id: fd-find },
+        },
+    }
+  - {
+      id: fzf,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: fzf },
+          windows: { manager: winget, id: junegunn.fzf },
+          ubuntu: { manager: apt, id: fzf },
+        },
+    }
+  - {
+      id: tmux,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: tmux },
+          ubuntu: { manager: apt, id: tmux },
+        },
+    }
+  - {
+      id: direnv,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: direnv },
+          ubuntu: { manager: apt, id: direnv },
+        },
+    }
+  - {
+      id: starship,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew, id: starship },
+          windows: { manager: winget, id: Starship.Starship },
+        },
+    }
+  - {
+      id: chrome,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: google-chrome },
+          windows: { manager: winget, id: Google.Chrome },
+        },
+    }
+  - {
+      id: windows-terminal,
+      profiles: [base],
+      providers:
+        { windows: { manager: winget, id: Microsoft.WindowsTerminal } },
+    }
+  - {
+      id: powertoys,
+      profiles: [base],
+      providers: { windows: { manager: winget, id: Microsoft.PowerToys } },
+    }
+  - {
+      id: raycast,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: raycast } },
+    }
+  - {
+      id: notion,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: notion },
+          windows: { manager: winget, id: Notion.Notion },
+        },
+    }
+  - {
+      id: obsidian,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: obsidian },
+          windows: { manager: winget, id: Obsidian.Obsidian },
+        },
+    }
+  - {
+      id: localsend,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: localsend },
+          windows: { manager: winget, id: LocalSend.LocalSend },
+        },
+    }
+  - {
+      id: parsec,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: parsec },
+          windows: { manager: winget, id: Parsec.Parsec },
+        },
+    }
+  - {
+      id: discord,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: discord },
+          windows: { manager: winget, id: Discord.Discord },
+        },
+    }
+  - {
+      id: syncthing,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: syncthing-app },
+          windows: { manager: winget, id: Syncthing.Syncthing },
+          ubuntu: { manager: apt, id: syncthing },
+        },
+    }
+  - {
+      id: tailscale,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: tailscale-app },
+          windows: { manager: winget, id: Tailscale.Tailscale },
+        },
+    }
+  - {
+      id: cloudflare-warp,
+      profiles: [base],
+      providers:
+        {
+          macos: { manager: brew-cask, id: cloudflare-warp },
+          windows: { manager: winget, id: Cloudflare.Warp },
+        },
+    }
+  - {
+      id: rectangle,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: rectangle } },
+    }
+  - {
+      id: iterm2,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: iterm2 } },
+    }
+  - {
+      id: karabiner,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: karabiner-elements } },
+    }
+  - {
+      id: scroll-reverser,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: scroll-reverser } },
+    }
+  - {
+      id: fontbase,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: fontbase } },
+    }
+  - {
+      id: jetbrains-mono-nerd-font,
+      profiles: [base],
+      providers:
+        { macos: { manager: brew-cask, id: font-jetbrains-mono-nerd-font } },
+    }
+  - {
+      id: mas,
+      profiles: [base],
+      providers: { macos: { manager: brew, id: mas } },
+    }
+  - {
+      id: xcodes,
+      profiles: [base],
+      providers: { macos: { manager: brew, id: xcodes } },
+    }
+  - {
+      id: xcodes-app,
+      profiles: [base],
+      providers: { macos: { manager: brew-cask, id: xcodes-app } },
+    }
+  - {
+      id: neovim,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew, id: neovim },
+          windows: { manager: winget, id: Neovim.Neovim },
+          ubuntu: { manager: apt, id: neovim },
+        },
+    }
+  - {
+      id: vim,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew, id: vim },
+          ubuntu: { manager: apt, id: vim },
+        },
+    }
+  - {
+      id: neovide,
+      profiles: [develop],
+      providers: { macos: { manager: brew-cask, id: neovide } },
+    }
+  - {
+      id: ffmpeg,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew, id: ffmpeg },
+          windows: { manager: winget, id: Gyan.FFmpeg },
+          ubuntu: { manager: apt, id: ffmpeg },
+        },
+    }
+  - {
+      id: terraform,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew, id: hashicorp/tap/terraform },
+          windows: { manager: winget, id: Hashicorp.Terraform },
+        },
+    }
+  - {
+      id: vscode,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew-cask, id: visual-studio-code },
+          windows: { manager: winget, id: Microsoft.VisualStudioCode },
+        },
+    }
+  - {
+      id: github-desktop,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew-cask, id: github },
+          windows: { manager: winget, id: GitHub.GitHubDesktop },
+        },
+    }
+  - {
+      id: docker,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew-cask, id: docker-desktop },
+          windows: { manager: winget, id: Docker.DockerDesktop },
+          ubuntu: { manager: apt, id: docker.io },
+        },
+    }
+  - {
+      id: postman,
+      profiles: [develop],
+      providers:
+        {
+          macos: { manager: brew-cask, id: postman },
+          windows: { manager: winget, id: Postman.Postman },
+        },
+    }
+  - {
+      id: anaconda,
+      profiles: [ai],
+      providers:
+        {
+          macos: { manager: brew-cask, id: anaconda },
+          windows: { manager: winget, id: Anaconda.Anaconda3 },
+        },
+    }
+  - {
+      id: opencode,
+      profiles: [ai],
+      providers:
+        {
+          macos: { manager: brew, id: anomalyco/tap/opencode },
+          windows: { manager: winget, id: SST.opencode },
+        },
+    }
+  - {
+      id: opencode-desktop,
+      profiles: [ai],
+      providers: { macos: { manager: brew-cask, id: opencode-desktop } },
+    }
+  - {
+      id: devin-desktop,
+      profiles: [ai],
+      providers: { macos: { manager: brew-cask, id: devin-desktop } },
+    }
+  - {
+      id: antigravity,
+      profiles: [ai],
+      providers: { macos: { manager: brew-cask, id: antigravity } },
+    }
+  - {
+      id: antigravity-cli,
+      profiles: [ai],
+      providers: { macos: { manager: brew-cask, id: antigravity-cli } },
+    }
+  - {
+      id: antigravity-ide,
+      profiles: [ai],
+      providers: { macos: { manager: brew-cask, id: antigravity-ide } },
+    }
+  - {
+      id: gemini-cli,
+      profiles: [ai],
+      providers: { macos: { manager: brew, id: gemini-cli } },
+    }
+  - {
+      id: codex,
+      profiles: [ai],
+      providers:
+        {
+          macos: { manager: brew-cask, id: codex },
+          windows: { manager: winget, id: OpenAI.Codex },
+        },
+    }
+  - {
+      id: claude,
+      profiles: [ai],
+      providers:
+        {
+          macos: { manager: brew-cask, id: claude-code },
+          windows: { manager: winget, id: Anthropic.Claude },
+        },
+    }
+  - {
+      id: cursor,
+      profiles: [ai],
+      providers:
+        {
+          macos: { manager: brew-cask, id: cursor },
+          windows: { manager: winget, id: Anysphere.Cursor },
+        },
+    }
+  - {
+      id: kiro,
+      profiles: [ai],
+      providers:
+        {
+          macos: { manager: brew-cask, id: kiro },
+          windows: { manager: winget, id: Amazon.Kiro },
+        },
+    }
+  - {
+      id: blender,
+      profiles: [design],
+      providers:
+        {
+          macos: { manager: brew-cask, id: blender },
+          windows: { manager: winget, id: BlenderFoundation.Blender },
+          ubuntu: { manager: apt, id: blender },
+        },
+    }
+  - {
+      id: figma,
+      profiles: [design],
+      providers:
+        {
+          macos: { manager: brew-cask, id: figma },
+          windows: { manager: winget, id: Figma.Figma },
+        },
+    }
+  - {
+      id: framer,
+      profiles: [design],
+      providers: { macos: { manager: brew-cask, id: framer } },
+    }
+  - {
+      id: protopie,
+      profiles: [design],
+      providers: { macos: { manager: brew-cask, id: protopie } },
+    }
+  - {
+      id: adobe-creative-cloud,
+      profiles: [design],
+      providers:
+        {
+          macos: { manager: brew-cask, id: adobe-creative-cloud },
+          windows: { manager: winget, id: Adobe.CreativeCloud },
+        },
+    }

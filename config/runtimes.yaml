@@ -1,0 +1,8 @@
+schemaVersion: 1
+tools:
+  node: "24"
+  python: "3.12"
+  java: "temurin-17"
+  rust: stable
+  bun: latest
+  uv: latest

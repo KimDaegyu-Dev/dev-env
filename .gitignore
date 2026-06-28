@@ -6,3 +6,17 @@ vscode/profile-map.json
 
 # Temporary bootstrap folders
 .tmp/
+
+# Control plane dependencies and build output
+node_modules/
+.pnpm-store/
+test-results/
+playwright-report/
+blob-report/
+dist/
+apps/dashboard/dist/
+packages/*/dist/
+*.tsbuildinfo
+
+# Runtime state is stored outside the repository; this is a local fallback.
+.dev-env/

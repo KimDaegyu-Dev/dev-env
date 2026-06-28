@@ -1,0 +1,44 @@
+schemaVersion: 1
+machines:
+  - id: macbook-air
+    selectors:
+      os: macos
+      hostname: Daegyusui-MacBookAir.local
+    profiles: [base, develop, ai, design]
+    vscodeProfiles:
+      [frontend, rust, cpp, backend, ai-python, fullstack, graphics, java]
+    paths:
+      externalAi: /Volumes/External/AI
+      comfyUi: "~/Documents/ComfyUI"
+
+  - id: windows-main
+    selectors:
+      os: windows
+    profiles: [base, develop, ai, design]
+    vscodeProfiles:
+      [frontend, rust, cpp, backend, ai-python, fullstack, graphics, java]
+    paths:
+      externalAi: "D:\\AI"
+      comfyUi: "${LOCALAPPDATA}\\Programs\\ComfyUI"
+
+  - id: wsl-ubuntu
+    selectors:
+      os: linux
+      wsl: true
+    profiles: [base, develop]
+    vscodeProfiles:
+      [frontend, rust, cpp, backend, ai-python, fullstack, graphics]
+    paths:
+      externalAi: /mnt/d/AI
+      comfyUi: "~/ComfyUI"
+
+  - id: ubuntu-main
+    selectors:
+      os: linux
+      wsl: false
+    profiles: [base, develop]
+    vscodeProfiles:
+      [frontend, rust, cpp, backend, ai-python, fullstack, graphics, java]
+    paths:
+      externalAi: /mnt/external/AI
+      comfyUi: "~/ComfyUI"

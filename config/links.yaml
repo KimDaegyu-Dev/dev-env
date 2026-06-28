@@ -1,0 +1,59 @@
+schemaVersion: 1
+links:
+  - id: zsh-config
+    machines: [macbook-air, ubuntu-main, wsl-ubuntu]
+    linkPath: ~/.zshrc
+    targetPath: "${repoRoot}/shell/.zshrc"
+    kind: file
+    enabled: true
+
+  - id: bash-config
+    machines: [macbook-air, ubuntu-main, wsl-ubuntu]
+    linkPath: ~/.bashrc
+    targetPath: "${repoRoot}/shell/.bashrc"
+    kind: file
+    enabled: true
+
+  - id: starship-config
+    machines: [macbook-air, ubuntu-main, wsl-ubuntu]
+    linkPath: ~/.config/starship.toml
+    targetPath: "${repoRoot}/shell/starship.toml"
+    kind: file
+    enabled: true
+
+  - id: git-shared-config
+    machines: [macbook-air, windows-main, ubuntu-main, wsl-ubuntu]
+    linkPath: ~/.config/dev-env/gitconfig
+    targetPath: "${repoRoot}/shell/.gitconfig"
+    kind: file
+    enabled: true
+
+  - id: git-global-ignore
+    machines: [macbook-air, windows-main, ubuntu-main, wsl-ubuntu]
+    linkPath: ~/.config/dev-env/gitignore_global
+    targetPath: "${repoRoot}/shell/.gitignore_global"
+    kind: file
+    enabled: true
+
+  - id: powershell-profile
+    machines: [windows-main]
+    linkPath: "${HOME}\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1"
+    targetPath: "${repoRoot}\\shell\\Microsoft.PowerShell_profile.ps1"
+    kind: file
+    enabled: true
+
+  - id: comfyui-models-external
+    machines: [macbook-air, windows-main, ubuntu-main, wsl-ubuntu]
+    linkPath: "${paths.comfyUi}/models"
+    targetPath: "${paths.externalAi}/ComfyUI/models"
+    kind: directory
+    windowsMode: junction
+    enabled: false
+
+  - id: comfyui-output-external
+    machines: [macbook-air, windows-main, ubuntu-main, wsl-ubuntu]
+    linkPath: "${paths.comfyUi}/output"
+    targetPath: "${paths.externalAi}/ComfyUI/output"
+    kind: directory
+    windowsMode: junction
+    enabled: false

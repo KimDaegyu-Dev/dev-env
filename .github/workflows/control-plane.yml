@@ -1,0 +1,45 @@
+name: Control plane
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.9.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm format:check
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+      - run: node packages/cli/dist/index.js config validate
+      - name: Read-only doctor smoke test (macOS)
+        if: runner.os == 'macOS'
+        run: node packages/cli/dist/index.js doctor --machine macbook-air --allow-unhealthy --json
+      - name: Read-only doctor smoke test (Windows)
+        if: runner.os == 'Windows'
+        run: node packages/cli/dist/index.js doctor --machine windows-main --allow-unhealthy --json
+      - name: Read-only doctor smoke test (Ubuntu)
+        if: runner.os == 'Linux'
+        run: node packages/cli/dist/index.js doctor --machine ubuntu-main --allow-unhealthy --json
+      - name: Install Chromium
+        if: runner.os == 'Linux'
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Dashboard end-to-end test
+        if: runner.os == 'Linux'
+        run: pnpm test:e2e
