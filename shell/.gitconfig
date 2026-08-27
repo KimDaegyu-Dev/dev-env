@@ -1,3 +1,6 @@
+[user]
+        name = Daegyu Kim
+        email = ddk3207@naver.com
 [init]
     defaultBranch = main
 [pull]
@@ -10,3 +13,12 @@
     enabled = true
 [core]
     editor = code --wait
+[alias]
+        br = branch
+        ca = commit --amend
+        cm = commit -m
+        co = checkout
+        ld = log --all --decorate --oneline --graph
+        p = push
+        pl = pull
+        rpo = remote prune origin
